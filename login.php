@@ -18,8 +18,8 @@
 	<div class="centre">
 		<form action="#" method="POST">
 			<div>
-				<label for="name">Roll Number</label>
-				<input type="number" class="inputs" name="name" required>
+				<label for="roll">Roll Number</label>
+				<input type="number" class="inputs" name="roll" required>
 			</div>
 			<div>
 				<label for="password">Password</label>
