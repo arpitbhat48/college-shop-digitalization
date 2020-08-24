@@ -1,4 +1,11 @@
 <style>
+    :root {
+        --dark-blue: #222831;
+        --light-blue: #4F8A8B;
+        --yellow: #FBD46D;
+        --white: #EEEEEE;
+    }
+
     * {
         margin: 0;
         padding: 0;

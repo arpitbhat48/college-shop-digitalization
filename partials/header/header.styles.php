@@ -1,6 +1,6 @@
 <style>
     header {
-        background-color: #222831;
+        background-color: var(--dark-blue);
         height: 70px;
         display: flex;
         align-items: center;
@@ -23,11 +23,11 @@
     }
 
     .logo1 {
-        color: #4F8A8B;
+        color: var(--light-blue);
     }
 
     .logo2 {
-        color: #FBD46D;
+        color: var(--yellow);
     }
 
     .nav-links {
@@ -43,7 +43,7 @@
 
     .navs>a {
         text-decoration: none;
-        color: #EEEEEE;
+        color: var(--white);
         font-weight: 700;
     }
 
