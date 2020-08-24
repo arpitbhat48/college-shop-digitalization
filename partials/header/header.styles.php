@@ -14,7 +14,11 @@
         font-size: 1.6rem;
     }
 
-    .logo>span {
+    .logo>a {
+        text-decoration: none;
+    }
+
+    .logo>a>span {
         padding: 0 3px;
     }
 

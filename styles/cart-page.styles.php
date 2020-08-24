@@ -40,7 +40,7 @@
     flex: 30%;
   } */
 	.mid {
-		margin: 0px 100px;
+		padding: 0 10%;
 	}
 
 	.cart-text {
