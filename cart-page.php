@@ -1,7 +1,7 @@
 <?php
-    include ('../header/header.php');
+require('./partials/header/header.php');
+require("./styles/cart-page.styles.php")
 ?>
-<link rel="stylesheet" type="text/css" href="styles.css" />
 <div class="mid">
     <div style="margin-top:50px">
         <p class="cart-text">Cart</p>
@@ -39,8 +39,8 @@
                 </div>
             </div>
         </div>
-        
-        <div class="column"> 
+
+        <div class="column">
             <div class="total-qr-card">
                 <div class="total">
                     <h2 class="center">Checkout <h2>
@@ -53,13 +53,11 @@
                 <hr>
                 <h2 class="center">Total : ₹870 </h2>
                 <button class="proceed center">Proceed to pay...</button>
-            </div>   
+            </div>
         </div>
     </div>
-
-    
-    <div class="row">
-        
-        
-    <div>
 </div>
+
+<?php
+require("./partials/footer/footer.php");
+?>
