@@ -5,7 +5,7 @@
     <ul class="nav-links">
         <li class="navs active-nav"><a href="#">Home</a></li>
         <li class="navs"><a href="#">Shop</a></li>
-        <li class="navs"><a href="#">Cart</a></li>
+        <li class="navs"><a href="./Partials/cartPage/cartpage.php">Cart</a></li>
         <li class="navs"><a href="#">Login</a></li>
     </ul>
 </header>
