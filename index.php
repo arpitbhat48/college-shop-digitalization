@@ -18,11 +18,11 @@
 
 <body>
     <?php
-    require("./partials/header.php");
+    require("./partials/header/header.php");
     ?>
 
     <?php
-    require("./partials/footer.php");
+    require("./partials/footer/footer.php");
     ?>
 </body>
 
