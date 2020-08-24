@@ -27,7 +27,7 @@
                         <div class="column prod-text" style="color:#DAA520;">₹500</div>
                     </div>
                 </div>
-                <div class="product-card">
+                <!-- <div class="product-card">
                     <div class="row">
                         <div class="column prod-image"></div>
                         <div class="column prod-text">Journal Sheets(300 pages)</div>
@@ -47,7 +47,7 @@
                         <div class="column prod-text">Hard bounds(6)</div>
                         <div class="column prod-text" style="color:#DAA520;">₹50</div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="column">
