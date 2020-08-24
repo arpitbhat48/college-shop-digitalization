@@ -10,7 +10,6 @@
 <body>
     <?php
     require('./partials/header/header.php');
-    require('./styles/reset.styles.php');
     require("./styles/cart-page.styles.php");
     ?>
     <div class="mid">

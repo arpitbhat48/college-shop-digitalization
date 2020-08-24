@@ -1,3 +1,4 @@
+<?php require("./styles/reset.styles.php"); ?>
 <?php require("header.styles.php") ?>
 
 <header>
