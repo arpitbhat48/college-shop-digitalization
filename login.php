@@ -14,7 +14,7 @@
 		require("./styles/login.styles.php");
     ?>
 
-	<h1>Log In______________________</h1>
+	<h1>Log In——————————————————</h1>
 	<div class="centre">
 		<form action="#" method="POST">
 			<div>

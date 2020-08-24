@@ -1,7 +1,7 @@
 <style>
 	label {
 		color: #EEEEEE;
-		font-weight: 500;
+		font-weight: 600;
 		font-style: italic;
 	}
 
@@ -22,7 +22,7 @@
 	.inputs {
 		width: 100%;
 		padding: 16px 20px;
-		margin: 8px 0;
+		margin: 12px 0;
 		display: inline-block;
 		box-sizing: border-box;
 	}
@@ -40,6 +40,11 @@
 		font-size: 0.70em;
 		float: right;
 		margin-top: 5px;
+		text-decoration: none;
+	}
+
+	form a:hover {
+		color: lightblue;
 	}
 
 	.btn {
@@ -55,5 +60,10 @@
 	}
 	.login {
 		float:right;
+	}
+
+	.btn:hover {
+		background-color: #FBD46D;
+		color: #222831;
 	}
 </style>	
