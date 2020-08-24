@@ -11,6 +11,6 @@
         <li class="navs active-nav"><a href="#">Home</a></li>
         <li class="navs"><a href="#">Shop</a></li>
         <li class="navs"><a href="cart-page.php">Cart</a></li>
-        <li class="navs"><a href="#">Login</a></li>
+        <li class="navs"><a href="login.php">Login</a></li>
     </ul>
 </header>
