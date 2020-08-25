@@ -14,12 +14,12 @@
 		require("./styles/login.styles.php");
     ?>
 
-	<h1>Log In——————————————————</h1>
+	<h1>Log In —————————————————</h1>
 	<div class="centre">
 		<form action="#" method="POST">
 			<div>
 				<label for="roll">Roll Number</label>
-				<input type="number" class="inputs" name="roll" required>
+				<input type="text" class="inputs" name="roll" required>
 			</div>
 			<div>
 				<label for="password">Password</label>
