@@ -15,10 +15,10 @@
 	}
 	form {	
 		background-color: #222831;
-		padding: 7% 6% 8% 6%;
+		padding: 7% 6% 5% 6%;
 		font-size: 1.4vw;
 		margin: 6%;
-		border-radius: 20px;		
+		border-radius: 20px;
 	}
 
 	/* inputs */
@@ -59,7 +59,7 @@
 		background-color: #222831;
 		color: #FBD46D;
 		font-weight: 500;
-		border: 5px solid #FBD46D;
+		border: 0.2em solid #FBD46D;
 		border-radius: 30px;
 		font-size: 2vw;
 		padding: 2% 7%;
