@@ -1,12 +1,27 @@
 <style>
+	/* heading */
 	h1 {
 		margin: auto;
 		color: #4F8A8B;
 		max-width: 70%;
-		font-size: 50px;
-		margin-top: 50px;
+		font-size: 3rem;
+		margin-top: 4%;
 	}
 
+	/* form */
+	.centre {
+		margin: auto;
+		width: 40%;
+	}
+	form {	
+		background-color: #222831;
+		padding: 7% 6% 8% 6%;
+		font-size: 1.4vw;
+		margin: 6%;
+		border-radius: 20px;		
+	}
+
+	/* inputs */
 	label {
 		color: #EEEEEE;
 		font-weight: 600;
@@ -23,43 +38,31 @@
 		font-size: 1em;
 	}
 
-	.centre {
-		margin: auto;
-		width: 40%;
-	}
-	form {	
-		background-color: #222831;
-		padding: 65px 50px 50px 50px;
-		font-size: 1.4vw;
-		margin: 50px;
-		border-radius: 20px;		
-	}
-
+	/* forgot password link */
 	form a {
 		color: #4F8A8B;
 		font-size: 0.70em;
 		float: inline-end;
-		margin: 5px;
-		margin-bottom: 0;
+		margin: 1%;
 		text-decoration: none;
 	}
 	form a:hover {
 		color: lightblue;
 	}
 	
+	/* buttons */
 	.login {
 		float:right;
 	}
-
 	.btn {
-		margin: 10px 0;
+		margin: 2.5% 0;
 		background-color: #222831;
 		color: #FBD46D;
 		font-weight: 500;
 		border: 5px solid #FBD46D;
 		border-radius: 30px;
 		font-size: 2vw;
-		padding: 7px 40px;
+		padding: 2% 7%;
 		cursor: pointer;
 	}	
 	.btn:hover {
