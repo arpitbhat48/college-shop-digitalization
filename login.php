@@ -25,12 +25,14 @@
 			</div>
 			<div>
 				<label for="password">Password</label>
-				<a href="#">Forgot Password</a>
+				<a class="forgot" href="#">Forgot Password</a>
 				<input type="password" class="inputs" name="password" required>
 				
 			</div>
 			<div>
-				<input type="button" class="btn" value="Register">
+				<a href="registration.php">
+					<input type="button" class="btn" value="Register">
+				</a>
 				<input type="submit" class="login btn" value="Log In">
 			</div>
 		</form>
