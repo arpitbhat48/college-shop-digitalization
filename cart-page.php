@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
+    <link rel="stylesheet" href="styles/cart-page.css">
 </head>
 
 <body>
     <?php
     require('./partials/header/header.php');
-    require("./styles/cart-page.styles.php");
+    // require("./styles/cart-page.styles.php");
     ?>
     <div class="mid">
         <div style="margin-top:50px">
