@@ -39,14 +39,14 @@ label {
 }
 
 /* forgot password link */
-form a {
+.forgot {
 	color: #4F8A8B;
 	font-size: 0.70em;
 	float: right;
 	margin: 1%;
 	text-decoration: none;
 }
-form a:hover {
+.forgot:hover {
 	color: lightblue;
 }
 
@@ -62,7 +62,7 @@ form a:hover {
 	border: 0.15em solid #FBD46D;
 	border-radius: 30px;
 	font-size: 2vw;
-	padding: 2% 5%;
+	padding: 2% 3%;
 	cursor: pointer;
 }	
 .btn:hover {
