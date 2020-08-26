@@ -11,7 +11,7 @@ h1 {
 /* form */
 .centre {
 	margin: auto;
-	width: 40%;
+	width: 30%;
 }
 form {	
 	background-color: #222831;
@@ -55,14 +55,14 @@ form a:hover {
 	float:right;
 }
 .btn {
-	margin: 2.5% 0;
+	margin: 2% 0;
 	background-color: #222831;
 	color: #FBD46D;
 	font-weight: 500;
-	border: 0.2em solid #FBD46D;
+	border: 0.15em solid #FBD46D;
 	border-radius: 30px;
 	font-size: 2vw;
-	padding: 2% 7%;
+	padding: 2% 5%;
 	cursor: pointer;
 }	
 .btn:hover {
