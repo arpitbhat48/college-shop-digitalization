@@ -51,4 +51,8 @@
         color: #FBD46D;
         text-decoration: underline;
     }
+
+    .navs>a:hover {
+        color: var(--yellow);
+    }
 </style>

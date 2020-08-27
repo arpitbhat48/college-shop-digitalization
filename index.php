@@ -9,7 +9,10 @@
 
 <body>
     <?php
-    require("./partials/header/header.php");
+    $PAGE = "home";
+    ?>
+    <?php
+    include("./partials/header/header.php");
     ?>
 
     <?php
