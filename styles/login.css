@@ -1,16 +1,15 @@
 /* heading */
 h1 {
-	margin: auto;
+	/* margin: auto; */
 	color: #4F8A8B;
-	max-width: 70%;
 	font-size: 3rem;
-	margin-top: 4%;
+	margin: 2% 10%;
 }
 
 /* form */
 .centre {
 	margin: auto;
-	width: 35%;
+	width: 40%;
 }
 form {	
 	background-color: #222831;
@@ -27,6 +26,7 @@ label {
 	font-style: italic;
 }
 .inputs {
+	display: block;
 	width: 100%;
 	max-width: 100%;
 	min-width: 20%;
