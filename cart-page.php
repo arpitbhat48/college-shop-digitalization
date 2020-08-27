@@ -10,6 +10,7 @@
 
 <body>
     <?php
+    $PAGE = "cart";
     require('./partials/header/header.php');
     // require("./styles/cart-page.styles.php");
     ?>
