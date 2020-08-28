@@ -55,4 +55,10 @@
     .navs>a:hover {
         color: var(--yellow);
     }
+
+    @media (max-width: 600px) {
+        .nav-links {
+            display: none;
+        }
+    }
 </style>

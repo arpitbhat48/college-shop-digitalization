@@ -9,13 +9,12 @@ h1 {
 /* form */
 .centre {
 	margin: auto;
-	width: 60%;
+	width: 70%;
 }
 form {
 	background-color: var(--dark-blue);
 	padding: 2rem 3rem;
 	font-size: 1.4rem;
-	margin: 6%;
 	border-radius: 20px;
 }
 
@@ -32,19 +31,13 @@ label {
 	display: block;
 	padding: 0.7rem 1rem;
 	margin: 0.25rem 0;
-	display: block;
-	box-sizing: border-box;
 	font-size: 1rem;
 	border-radius: 5px;
 	width: 100%;
+	min-width: 250px;
 }
 
 /* buttons */
-.buttons {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
 .btn {
 	background-color: var(--dark-blue);
 	color: var(--yellow);
@@ -74,8 +67,20 @@ label {
 .names,
 .numbers,
 .pwds,
-.email {
+.email,
+.buttons {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+	.centre {
+		width: 95%;
+	}
+
+	.buttons {
+		align-content: center;
+	}
 }
