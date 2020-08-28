@@ -1,4 +1,4 @@
-<?php require("./styles/reset.styles.php"); ?>
+<?php require("reset.styles.php"); ?>
 <?php require("header.styles.php") ?>
 <?php
 $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "login" => "login.php");

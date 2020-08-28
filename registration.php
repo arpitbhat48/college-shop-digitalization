@@ -14,28 +14,48 @@
 	require("./partials/header/header.php");
 	?>
 	<div>
-		<h1>Register </h1>
+		<h1>Register</h1>
 	</div>
 
 	<div class="centre">
 		<form action="index.php" method="post">
-			<label for="name">Name</label>
-			<input class="inputs" type="text" name="name" required>
-			<label for="roll">Roll No.</label>
-			<input class="inputs" type="text" name="roll" required>
-			<label for="phone">Phone No.</label>
-			<input class="inputs" type="tel" name="phone" required>
-			<label for="email">E-mail</label>
-			<input class="inputs" type="email" name="email" required>
-			<label for="pwd">Password</label>
-			<input class="inputs" type="password" name="pwd" required>
-			<label for="confPwd">Confirm Password</label>
-			<input class="inputs" type="password" name="confPwd" required>
-
-			<div class="centre">
-				<input class="btn" type="submit" value="Sign Up">
+			<div class="names">
+				<label>First Name
+					<input class="inputs" type="text" name="fname" required>
+				</label>
+				<label>Last Name
+					<input class="inputs" type="text" name="lname" required>
+				</label>
 			</div>
-			
+
+			<div class="numbers">
+				<label>Roll No.
+					<input class="inputs" type="text" name="roll" required>
+				</label>
+				<label>Phone No.
+					<input class="inputs" type="tel" name="phone" required>
+				</label>
+			</div>
+			<div class="email">
+				<label>E-mail
+					<input class="inputs" type="email" name="email" required>
+				</label>
+			</div>
+			<div class="pwds">
+				<label>Password
+					<input class="inputs" type="password" name="pwd" required>
+				</label>
+				<label>Confirm Password
+					<input class="inputs" type="password" name="confPwd" required>
+				</label>
+			</div>
+			<div class="buttons">
+				<a href="login.php">
+					<input type="button" class="btn" value="Login">
+				</a>
+				<input class="btn btn-inv" type="submit" value="Sign Up">
+			</div>
+
 		</form>
 	</div>
 	<?php
