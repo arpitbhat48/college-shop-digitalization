@@ -56,6 +56,20 @@
         color: var(--yellow);
     }
 
+    /* Sticky-footer */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .wrapper {
+        min-height: 100%;
+        /* Equal to height of footer */
+        /* But also accounting for potential margin-bottom of last child */
+        margin-bottom: -75px;
+    }
+
     @media (max-width: 600px) {
         .nav-links {
             display: none;

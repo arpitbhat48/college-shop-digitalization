@@ -1,0 +1,32 @@
+.container {
+	padding: 10%;
+}
+
+.container > h1 {
+	color: var(--light-blue);
+	font-size: 5rem;
+	padding: 0.6rem 0;
+}
+
+.container > h3 {
+	color: var(--dark-blue);
+	width: 50%;
+	padding: 1rem 0;
+	line-height: 1.5rem 0;
+}
+
+.container > a {
+	display: inline-block;
+	background-color: var(--yellow);
+	text-decoration: none;
+	color: var(--dark-blue);
+	font-weight: 700;
+	padding: 1rem 2rem;
+	margin: 1rem 0;
+	border-radius: 3rem;
+}
+
+.container > a:hover {
+	background-color: var(--dark-blue);
+	color: var(--yellow);
+}
