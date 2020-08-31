@@ -48,7 +48,7 @@
     }
 
     .active-nav>a {
-        color: #FBD46D;
+        color: var(--yellow);
         text-decoration: underline;
     }
 

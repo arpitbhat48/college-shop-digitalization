@@ -15,4 +15,10 @@
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
     }
+
+    button,
+    a,
+    input.btn {
+        transition: all 100ms ease-in-out;
+    }
 </style>

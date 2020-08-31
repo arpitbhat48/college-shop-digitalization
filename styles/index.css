@@ -30,3 +30,13 @@
 	background-color: var(--dark-blue);
 	color: var(--yellow);
 }
+
+@media (max-width: 600px) {
+	.container > h1 {
+		font-size: 3rem;
+	}
+
+	.container > h3 {
+		width: 100%;
+	}
+}
