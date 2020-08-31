@@ -16,24 +16,26 @@
 	require("./partials/header/header.php");
 	?>
 
-	<h1>Log In —————————————————</h1>
+	<h1>Log In</h1>
 	<div class="centre">
 		<form action="#" method="POST">
-			<div>
-				<label for="roll">Roll Number</label>
-				<input type="text" class="inputs" name="roll" required>
+			<div class="roll">
+				<label>Roll Number
+					<input type="text" class="inputs" name="roll" required>
+				</label>
 			</div>
-			<div>
-				<label for="password">Password</label>
-				<a class="forgot" href="#">Forgot Password</a>
-				<input type="password" class="inputs" name="password" required>
+			<div class="pwd">
+				<label>Password
+					<a class="forgot" href="#">Forgot Password</a>
+					<input type="password" class="inputs" name="password" required>
+				</label>
 
 			</div>
-			<div>
+			<div class="buttons">
 				<a href="registration.php">
-					<input type="button" class="btn" value="Register">
+					<input class="btn" type="button" value="Register">
 				</a>
-				<input type="submit" class="login btn" value="Log In">
+				<input class="btn" type="submit" value="Log In">
 			</div>
 		</form>
 	</div>
