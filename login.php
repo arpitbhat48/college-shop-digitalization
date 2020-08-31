@@ -35,7 +35,7 @@
 				<a href="registration.php">
 					<input class="btn" type="button" value="Register">
 				</a>
-				<input class="btn" type="submit" value="Log In">
+				<input class="btn btn-inv" type="submit" value="Log In">
 			</div>
 		</form>
 	</div>
