@@ -9,46 +9,48 @@ require("./partials/header/header.php");
 </div>
 
 <div class="centre">
-	<form action="index.php" method="post">
+	<form>
 		<div class="names">
 			<label>First Name
-				<input class="inputs" type="text" name="fname" required>
+				<input class="inputs" type="text" name="fname">
 			</label>
 			<label>Last Name
-				<input class="inputs" type="text" name="lname" required>
+				<input class="inputs" type="text" name="lname">
 			</label>
 		</div>
 
 		<div class="numbers">
 			<label>Roll No.
-				<input class="inputs" type="text" name="roll" required>
+				<input class="inputs" type="text" name="roll">
 			</label>
 			<label>Phone No.
-				<input class="inputs" type="tel" name="phone" required>
+				<input class="inputs" type="tel" name="phone">
 			</label>
 		</div>
 		<div class="email">
 			<label>E-mail
-				<input class="inputs" type="email" name="email" required>
+				<input class="inputs" type="email" name="email">
 			</label>
 		</div>
 		<div class="pwds">
 			<label>Password
-				<input class="inputs" type="password" name="pwd" required>
+				<input class="inputs" type="password" name="pwd">
 			</label>
 			<label>Confirm Password
-				<input class="inputs" type="password" name="confPwd" required>
+				<input class="inputs" type="password" name="confPwd">
 			</label>
 		</div>
 		<div class="buttons">
 			<a href="login.php">
 				<input type="button" class="btn" value="Login">
 			</a>
-			<input class="btn btn-inv" type="submit" value="Sign Up">
+			<input class="btn btn-inv" type="submit" onClick="validateForm()" value="Sign Up">
 		</div>
 
 	</form>
 </div>
+<script src="./scripts/validate.js"></script>
+<script src="./scripts/register.js"></script>
 <?php
 require("./partials/footer/footer.php");
 ?>
