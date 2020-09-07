@@ -2,7 +2,7 @@ validate = {
     name        : (name) => {
         const re = /^\w+$/g;
         if (!re.test(String(name))) {
-            return 'Should consist only of alphabets';
+            return 'Should consist only of alphabet';
         } else {
             return '';
         }
