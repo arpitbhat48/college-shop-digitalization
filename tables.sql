@@ -1,6 +1,6 @@
 CREATE TABLE inventory (
 	item_id INT PRIMARY KEY,
-	item_name VARCHAR(40),
+	item_name VARCHAR(100),
 	cost INT,
 	stock INT,
 	description VARCHAR(100)
@@ -8,15 +8,15 @@ CREATE TABLE inventory (
 
 CREATE TABLE users (
 	user_rno INT PRIMARY KEY,
-	user_name VARCHAR(30),
-	email VARCHAR(30),
-	phone_no INT,
-	password VARCHAR(30)
+	user_name VARCHAR(50),
+	email VARCHAR(50),
+	phone_no VARCHAR(10),
+	password VARCHAR(128)
 );
 
 CREATE TABLE filter_names (
 	filter_id INT PRIMARY KEY,
-	filter_name VARCHAR(20)
+	filter_name VARCHAR(50)
 );
 
 CREATE TABLE filter_items (
@@ -44,4 +44,3 @@ CREATE TABLE cart (
 	FOREIGN KEY (user_id) REFERENCES orders(user_id),
 	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
 );
-
