@@ -7,14 +7,14 @@ validate = {
             return '';
         }
     },
-    rollNumber  : (number) => {
-        const re = /^\d{6, 7}/g;
-        if (!re.test(String(number))) {
-            return 'Invalid roll number';
-        } else {
-            return '';
-        }
-    },
+    // rollNumber  : (number) => {
+    //     const re = /^\d{6, 7}/g;
+    //     if (!re.test(String(number))) {
+    //         return 'Invalid roll number';
+    //     } else {
+    //         return '';
+    //     }
+    // },
     phoneNumber : (number) => {
         const re = /^\d{10}/g;
         if (!re.test(String(number))) {
