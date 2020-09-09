@@ -5,7 +5,7 @@ require("./partials/header/header.php");
 <link rel="stylesheet" href="styles/login.css">
 <h1>Log In</h1>
 <div class="centre">
-	<form>
+	<form action="" method="POST">
 		<div class="roll">
 			<label>Roll Number
 				<input type="text" class="inputs" name="roll" required>
@@ -21,7 +21,7 @@ require("./partials/header/header.php");
 			<a href="registration.php">
 				<input class="btn" type="button" value="Register">
 			</a>
-			<input class="btn btn-inv" type="submit" onclick="validateForm()" value="Log In">
+			<input class="btn btn-inv" type="submit" name="login" onclick="validateForm()" value="Log In">
 		</div>
 	</form>
 </div>
@@ -30,4 +30,30 @@ require("./partials/header/header.php");
 
 <?php
 require("./partials/footer/footer.php");
+require("db.php");
+
+if (isset($_POST['login'])) {
+	$rno = $_POST['roll'];
+	$pwd = $_POST['pwd'];
+
+	$query = "SELECT * FROM users 
+	WHERE user_rno = '$rno'";
+
+	// echo $password;
+	$get_query = mysqli_query($con, $query);
+	
+
+	if (mysqli_num_rows($get_query) == 0) {
+		echo "<script>alert(`Wrong Roll Number`)</script>";
+	} else {
+		while ($row = mysqli_fetch_array($get_query)) {
+			$password = $row['password'];
+		}
+
+		// echo password_verify($pwd, $password);
+		if (password_verify($pwd, $password)) {
+			echo "<script>alert('Login')</script>";
+		}
+	}
+}
 ?>

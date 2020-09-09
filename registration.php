@@ -9,7 +9,7 @@ require("./partials/header/header.php");
 </div>
 
 <div class="centre">
-	<form>
+	<form action="" method="POST">
 		<div class="names">
 			<label>First Name
 				<input class="inputs" type="text" name="fname">
@@ -24,7 +24,7 @@ require("./partials/header/header.php");
 				<input class="inputs" type="text" name="roll">
 			</label>
 			<label>Phone No.
-				<input class="inputs" type="tel" name="phone">
+				<input class="inputs" type="text" name="phone">
 			</label>
 		</div>
 		<div class="email">
@@ -44,13 +44,46 @@ require("./partials/header/header.php");
 			<a href="login.php">
 				<input type="button" class="btn" value="Login">
 			</a>
-			<input class="btn btn-inv" type="submit" onClick="validateForm()" value="Sign Up">
+			<input class="btn btn-inv" type="submit" name="register" onClick="validateForm()" value="Sign Up">
 		</div>
 
 	</form>
 </div>
-<script src="./scripts/validate.js"></script>
-<script src="./scripts/register.js"></script>
+<!-- <script src="./scripts/validate.js"></script>
+<script src="./scripts/register.js"></script> -->
+
 <?php
 require("./partials/footer/footer.php");
+require("db.php");
+
+if (isset($_POST['register'])) {
+
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+	$rno = $_POST['roll'];
+	$phone = $_POST['phone'];
+	$email = $_POST['email'];
+	$pwd = $_POST['pwd'];
+	$confPwd = $_POST['confPwd'];
+	$name = $fname . " " . $lname;
+
+	$password = password_hash($pwd, PASSWORD_DEFAULT);
+	// echo $name;
+
+	if (strcmp($pwd, $confPwd) == 0) {
+		$query = "INSERT INTO users VALUES (
+			'$rno',
+			'$name',
+			'$email',
+			'$phone',
+			'$password')";
+
+		if (mysqli_query($con, $query)) {
+			echo "<script>alert('SucessFully Registered');</script>";
+		} else {
+			echo "<script>alert('Error');</script>";
+		}
+	}
+}
+
 ?>
