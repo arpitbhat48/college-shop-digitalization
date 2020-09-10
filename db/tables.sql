@@ -1,3 +1,7 @@
+CREATE DATABASE college_shop;
+
+USE college_shop;
+
 CREATE TABLE inventory (
 	item_id INT PRIMARY KEY,
 	item_name VARCHAR(100),
