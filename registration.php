@@ -49,12 +49,12 @@ require("./partials/header/header.php");
 
 	</form>
 </div>
-<!-- <script src="./scripts/validate.js"></script>
-<script src="./scripts/register.js"></script> -->
+<script src="./scripts/validate.js"></script>
+<script src="./scripts/register.js"></script>
 
 <?php
 require("./partials/footer/footer.php");
-require("db.php");
+require("db/db.php");
 
 if (isset($_POST['register'])) {
 
@@ -72,11 +72,7 @@ if (isset($_POST['register'])) {
 
 	if (strcmp($pwd, $confPwd) == 0) {
 		$query = "INSERT INTO users VALUES (
-			'$rno',
-			'$name',
-			'$email',
-			'$phone',
-			'$password')";
+			'$rno', '$name', '$email', '$phone', '$password')";
 
 		if (mysqli_query($con, $query)) {
 			echo "<script>alert('SucessFully Registered');</script>";
