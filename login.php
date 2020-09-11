@@ -1,11 +1,16 @@
 <?php
-$PAGE = "login";
+if (isset($_SESSION['rollno'])) {
+	$PAGE = "logout";
+} else {
+	$PAGE = "login";
+}
+
 require("./partials/header/header.php");
 ?>
 <link rel="stylesheet" href="styles/login.css">
 <h1>Log In</h1>
 <div class="centre">
-	<form action="" method="POST">
+	<form method="POST">
 		<div class="roll">
 			<label>Roll Number
 				<input type="text" class="inputs" name="roll" required>
@@ -46,7 +51,11 @@ if (isset($_POST['login'])) {
 		$password = $row['password'];
 		
 		if (password_verify($pwd, $password)) {
-			echo "<script>alert('Login')</script>";
+			$_SESSION['rollno'] = $rno;
+			// echo "<script>alert('Login')</script>";
+			echo "<script>window.open('index.php','_self')</script>";
+		} else {
+			echo "<script>alert('Incorrect password')</script>";
 		}
 	}
 }

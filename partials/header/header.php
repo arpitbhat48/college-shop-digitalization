@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +14,15 @@
 
     <?php require("reset.styles.php"); ?>
     <?php require("header.styles.php") ?>
-    <?php
-    $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart.php", "login" => "login.php");
+	<?php
+	
+    // $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart.php", $status => "login.php");
+	$pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart.php");
+	if (isset($_SESSION['rollno'])) {
+		$pages['logout'] = "logout.php";
+	} else {
+		$pages['login'] = "login.php";
+    }
     ?>
     <div class="wrapper">
         <header>
