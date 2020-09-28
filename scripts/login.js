@@ -3,8 +3,16 @@ const pwd = document.querySelector('input[name="pwd"]');
 
 function validateForm() {
     let err = '';
-    err += validate.rollNumber(roll.value) + '\n';
-    err += validate.password(pwd.value) + '\n';
+    eroll = validate.rollNumber(roll.value);
+    epwd = validate.password(pwd.value);
+
+    if (eroll) err += eroll + '\n';
+    if (epwd) err += epwd + '\n';
+
+    if (err === '') {
+        return True;
+    }
 
     alert(err);
+    return False;
 }

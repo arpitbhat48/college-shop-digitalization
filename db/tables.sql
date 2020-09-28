@@ -24,7 +24,7 @@ CREATE TABLE filter_names (
 );
 
 CREATE TABLE filter_items (
-	filter_id INT, 
+	filter_id INT,
 	item_id INT,
 	FOREIGN KEY (item_id) REFERENCES inventory(item_id),
 	FOREIGN KEY (filter_id) REFERENCES filter_names(filter_id)

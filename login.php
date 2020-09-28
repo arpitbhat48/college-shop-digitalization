@@ -5,7 +5,7 @@ require("./partials/header/header.php");
 <link rel="stylesheet" href="styles/login.css">
 <h1>Log In</h1>
 <div class="centre">
-	<form action="" method="POST">
+	<form action="" method="POST" onsubmit="return validateForm()">
 		<div class="roll">
 			<label>Roll Number
 				<input type="text" class="inputs" name="roll" required>
@@ -21,7 +21,7 @@ require("./partials/header/header.php");
 			<a href="registration.php">
 				<input class="btn" type="button" value="Register">
 			</a>
-			<input class="btn btn-inv" type="submit" name="login" onclick="validateForm()" value="Log In">
+			<input class="btn btn-inv" type="submit" name="login" value="Log In">
 		</div>
 	</form>
 </div>
@@ -38,13 +38,13 @@ if (isset($_POST['login'])) {
 
 	$query = "SELECT * FROM users WHERE user_rno = '$rno'";
 	$run_query = mysqli_query($con, $query);
-	
+
 	if (mysqli_num_rows($run_query) == 0) {
 		echo "<script>alert(`Wrong Roll Number`)</script>";
 	} else {
 		$row = mysqli_fetch_array($run_query);
 		$password = $row['password'];
-		
+
 		if (password_verify($pwd, $password)) {
 			echo "<script>alert('Login')</script>";
 		}
