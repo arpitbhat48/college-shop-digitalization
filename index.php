@@ -10,7 +10,7 @@ include("./partials/header/header.php");
 <div class="container">
     <h1>No more queues</h1>
     <h3>Tired of long lines and easy to lose recipts? Try out the new digital college shop.</h3>
-    <a href="cart-page.php">Shop Now!</a>
+    <a href="shop.php">Shop Now!</a>
 </div>
 
 
