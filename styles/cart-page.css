@@ -10,15 +10,11 @@
 	text-align: center;
 }
 
-.navbar {
-	color: white;
-	text-decoration: none;
-	color: white;
-	font-size: 20px;
-	border: 1px;
-	background-color: #090;
-	color: white;
-	padding: 6px;
+h1 {
+	/* margin: auto; */
+	color: #4F8A8B;
+	font-size: 3rem;
+	margin: 2% 10%;
 }
 
 .column {
@@ -32,13 +28,6 @@
 	clear: both;
 }
 
-/* .row {
-display: flex;
-}
-
-.column {
-flex: 30%;
-} */
 .mid {
 	padding: 0 10%;
 }
@@ -81,25 +70,41 @@ flex: 30%;
 
 .total-qr-card {
 	height: 450px;
-	background-color: #ffd966;
-	margin: 55px 35px 0px 95px;
+	background-color: var(--yellow);
+	margin: 55px 35px 40px 95px;
 }
 
 .total {
-	padding-top: 50px;
+	padding-top: 30px;
 }
 
 .price {
-	margin-right: 20px;
-	float: right;
+	align-self: flex-end;
 }
 
-.proceed {
+.proceed-btn { 
 	background-color: #353836;
 	color: white;
 	width: 55%;
-	height: 12%;
-	align-content: center;
+	height: 75px;
+	font-size : 1rem;
 	border-radius: 18px;
-	margin: 0px 0px 0px 100px;
+}
+
+.proceed-div {
+	display: flex;
+	justify-content: center;
+	
+}
+h1{
+	/* margin: auto; */
+	color: #4F8A8B;
+	font-size: 3rem;
+	margin: 2% 10%;
+}
+
+.amount {
+	display: flex;
+  justify-content: center;
+  align-items: center;
 }

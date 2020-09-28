@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
-    <link rel="stylesheet" href="styles/cart-page.css">
+    <link rel="stylesheet" href="./styles/cart-page.css">
+    <style>
+        @media screen and (max-width: 400px) {
+            #one { 
+                float: none;
+                margin-right:0;
+                width:auto;
+                border:0;
+                border-bottom:2px solid #000;    
+            }
+        }
+    </style>
 </head>
 
 <body>
     <?php
     $PAGE = "cart";
     require('./partials/header/header.php');
-    // require("./styles/cart-page.styles.php");
+    // require('./partials/header/reset.styles.php');
     ?>
+    <h1>Cart ——————————————————</h1>
     <div class="mid">
-        <div style="margin-top:50px">
-            <p class="cart-text">Cart</p>
-            <hr>
-        </div>
-
         <div class="row">
             <div class="col1 column">
                 <div class="product-card">
@@ -29,7 +36,7 @@
                         <div class="column prod-text" style="color:#DAA520;">₹500</div>
                     </div>
                 </div>
-                <!-- <div class="product-card">
+                <div class="product-card">
                     <div class="row">
                         <div class="column prod-image"></div>
                         <div class="column prod-text">Journal Sheets(300 pages)</div>
@@ -49,7 +56,7 @@
                         <div class="column prod-text">Hard bounds(6)</div>
                         <div class="column prod-text" style="color:#DAA520;">₹50</div>
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <div class="column">
@@ -57,14 +64,20 @@
                     <div class="total">
                         <h2 class="center">Checkout <h2>
                     </div>
-                    <br>
-                    <div class="price">₹500</div><br><br><br>
-                    <div class="price">+ ₹220</div><br><br><br>
-                    <div class="price">+ ₹100</div><br><br><br>
-                    <div class="price">+ ₹50</div><br>
-                    <hr>
-                    <h2 class="center">Total : ₹870 </h2>
-                    <button class="proceed center">Proceed to pay...</button>
+                    
+                    <div class="amount">
+                        <div class="price">₹501</div>
+                        <div class="price">+ ₹220</div>
+                        <div class="price">+ ₹100</div>
+                        <div class="price">+ ₹40</div>   
+                    </div>
+                    <div style= "margin-top: 60%;">
+                        <hr>
+                        <h2 class="center" >Total : ₹860 </h2>
+                        <div class="proceed-div">
+                            <button class="proceed-btn">PROCEED TO PAY...</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
