@@ -49,8 +49,8 @@ require("./partials/header/header.php");
 
 	</form>
 </div>
-<!-- <script src="./scripts/validate.js"></script>
-<script src="./scripts/register.js"></script> -->
+<script src="./scripts/validate.js"></script>
+<script src="./scripts/register.js"></script>
 
 <?php
 require("./partials/footer/footer.php");

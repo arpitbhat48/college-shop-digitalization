@@ -8,15 +8,27 @@ const confPwd = document.querySelector('input[name="confPwd"]');
 
 function validateForm() {
     let err = '';
-    err += validate.name(fname.value) + '\n';
-    err += validate.name(lname.value) + '\n';
-    err += validate.rollNumber(roll.value) + '\n';
-    err += validate.phoneNumber(phone.value) + '\n';
-    err += validate.email(email.value) + '\n';
-    err += validate.password(pwd.value) + '\n';
 
-    if (pwd.value !== confPwd.value) {
-        err += "Passwords don't match";
+    efname = validate.name(fname.value);
+    elname = validate.name(lname.value);
+    eroll = validate.rollNumber(roll.value);
+    ephone = validate.phoneNumber(phone.value);
+    eemail = validate.email(email.value);
+    epwd = validate.password(pwd.value);
+    ematch = pwd.value === confPwd.value ? '' : "Passwords don't match";
+
+    if (efname) err += efname + '\n';
+    if (elname) err += elname + '\n';
+    if (eroll) err += eroll + '\n';
+    if (ephone) err += ephone + '\n';
+    if (eemail) err += eemail + '\n';
+    if (epwd) err += epwd + '\n';
+    if (ematch) err += ematch + '\n';
+
+    if (err === '') {
+        return True;
     }
+
     alert(err);
+    return False;
 }
