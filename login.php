@@ -46,7 +46,11 @@ if (isset($_POST['login'])) {
 		$password = $row['password'];
 
 		if (password_verify($pwd, $password)) {
-			echo "<script>alert('Login')</script>";
+			// echo "<script>alert('Login')</script>";
+			$_SESSION['rollno'] = $rno;
+			echo "<script>window.open('index.php','_self')</script>";
+		} else {
+			echo "<script>alert('Incorrect password')</script>";
 		}
 	}
 }
