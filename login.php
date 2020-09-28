@@ -30,27 +30,21 @@ require("./partials/header/header.php");
 
 <?php
 require("./partials/footer/footer.php");
-require("db.php");
+require("db/db.php");
 
 if (isset($_POST['login'])) {
 	$rno = $_POST['roll'];
 	$pwd = $_POST['pwd'];
 
-	$query = "SELECT * FROM users
-	WHERE user_rno = '$rno'";
+	$query = "SELECT * FROM users WHERE user_rno = '$rno'";
+	$run_query = mysqli_query($con, $query);
 
-	// echo $password;
-	$get_query = mysqli_query($con, $query);
-
-
-	if (mysqli_num_rows($get_query) == 0) {
+	if (mysqli_num_rows($run_query) == 0) {
 		echo "<script>alert(`Wrong Roll Number`)</script>";
 	} else {
-		while ($row = mysqli_fetch_array($get_query)) {
-			$password = $row['password'];
-		}
+		$row = mysqli_fetch_array($run_query);
+		$password = $row['password'];
 
-		// echo password_verify($pwd, $password);
 		if (password_verify($pwd, $password)) {
 			echo "<script>alert('Login')</script>";
 		}
