@@ -8,7 +8,7 @@ validate = {
     }
   },
   rollNumber  : (number) => {
-    const re = /^\d{6, 7}$/g;
+    const re = /^\d{6,7}$/g;
     if (!re.test(String(number))) {
       return 'Invalid roll number';
     } else {
