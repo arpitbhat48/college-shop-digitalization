@@ -77,10 +77,10 @@ label {
 
 @media (max-width: 600px) {
 	.centre {
-		width: 95%;
+		width: 90%;
 	}
 
 	.buttons {
-		align-content: center;
+		flex-direction: column;
 	}
 }

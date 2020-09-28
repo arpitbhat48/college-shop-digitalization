@@ -1,46 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<title>Login Page</title>
-
-	<link rel="stylesheet" href="styles/login.css">
-</head>
-
-<body>
-	<?php
-	$PAGE = "login";
-	require("./partials/header/header.php");
-	?>
-
-	<h1>Log In —————————————————</h1>
-	<div class="centre">
-		<form action="#" method="POST">
-			<div>
-				<label for="roll">Roll Number</label>
+<?php
+$PAGE = "login";
+require("./partials/header/header.php");
+?>
+<link rel="stylesheet" href="styles/login.css">
+<h1>Log In</h1>
+<div class="centre">
+	<form action="" method="POST">
+		<div class="roll">
+			<label>Roll Number
 				<input type="text" class="inputs" name="roll" required>
-			</div>
-			<div>
-				<label for="password">Password</label>
+			</label>
+		</div>
+		<div class="pwd">
+			<label>Password
 				<a class="forgot" href="#">Forgot Password</a>
-				<input type="password" class="inputs" name="password" required>
+				<input type="password" class="inputs" name="pwd" required>
+			</label>
+		</div>
+		<div class="buttons">
+			<a href="registration.php">
+				<input class="btn" type="button" value="Register">
+			</a>
+			<input class="btn btn-inv" type="submit" name="login" onclick="validateForm()" value="Log In">
+		</div>
+	</form>
+</div>
+<script src="./scripts/validate.js"></script>
+<script src="./scripts/login.js"></script>
 
-			</div>
-			<div>
-				<a href="registration.php">
-					<input type="button" class="btn" value="Register">
-				</a>
-				<input type="submit" class="login btn" value="Log In">
-			</div>
-		</form>
-	</div>
+<?php
+require("./partials/footer/footer.php");
+require("db/db.php");
 
-	<?php
-	require("./partials/footer/footer.php");
-	?>
-</body>
+if (isset($_POST['login'])) {
+	$rno = $_POST['roll'];
+	$pwd = $_POST['pwd'];
 
-</html>
+	$query = "SELECT * FROM users WHERE user_rno = '$rno'";
+	$run_query = mysqli_query($con, $query);
+	
+	if (mysqli_num_rows($run_query) == 0) {
+		echo "<script>alert(`Wrong Roll Number`)</script>";
+	} else {
+		$row = mysqli_fetch_array($run_query);
+		$password = $row['password'];
+		
+		if (password_verify($pwd, $password)) {
+			echo "<script>alert('Login')</script>";
+		}
+	}
+}
+?>

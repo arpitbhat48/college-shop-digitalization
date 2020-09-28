@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$PAGE = "home";
+?>
+<?php
+include("./partials/header/header.php");
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Shop Digitization</title>
-</head>
+<link rel="stylesheet" href="styles/index.css">
 
-<body>
-    <?php
-    $PAGE = "home";
-    ?>
-    <?php
-    include("./partials/header/header.php");
-    ?>
+<div class="container">
+    <h1>No more queues</h1>
+    <h3>Tired of long lines and easy to lose recipts? Try out the new digital college shop.</h3>
+    <a href="cart-page.php">Shop Now!</a>
+</div>
 
-    <?php
-    require("./partials/footer/footer.php");
-    ?>
-</body>
 
-</html>
+<?php
+require("./partials/footer/footer.php");
+?>

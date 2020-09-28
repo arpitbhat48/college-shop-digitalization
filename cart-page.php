@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
-    <link rel="stylesheet" href="./styles/cart-page.css">
+    <link rel="stylesheet" href="./styles/cart.css">
     <style>
         @media screen and (max-width: 400px) {
             #one { 

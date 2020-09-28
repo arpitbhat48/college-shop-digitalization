@@ -1,66 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$PAGE = "login";
+require("./partials/header/header.php");
+?>
+<link rel="stylesheet" type="text/css" href="styles/registration.css">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Registration</title>
-	<link rel="stylesheet" href="styles/registration.css">
-</head>
+<div>
+	<h1>Register</h1>
+</div>
 
-<body>
-	<?php
-	$PAGE = "login";
-	require("./partials/header/header.php");
-	?>
-	<div>
-		<h1>Register</h1>
-	</div>
+<div class="centre">
+	<form action="" method="POST">
+		<div class="names">
+			<label>First Name
+				<input class="inputs" type="text" name="fname">
+			</label>
+			<label>Last Name
+				<input class="inputs" type="text" name="lname">
+			</label>
+		</div>
 
-	<div class="centre">
-		<form action="index.php" method="post">
-			<div class="names">
-				<label>First Name
-					<input class="inputs" type="text" name="fname" required>
-				</label>
-				<label>Last Name
-					<input class="inputs" type="text" name="lname" required>
-				</label>
-			</div>
+		<div class="numbers">
+			<label>Roll No.
+				<input class="inputs" type="text" name="roll">
+			</label>
+			<label>Phone No.
+				<input class="inputs" type="text" name="phone">
+			</label>
+		</div>
+		<div class="email">
+			<label>E-mail
+				<input class="inputs" type="email" name="email">
+			</label>
+		</div>
+		<div class="pwds">
+			<label>Password
+				<input class="inputs" type="password" name="pwd">
+			</label>
+			<label>Confirm Password
+				<input class="inputs" type="password" name="confPwd">
+			</label>
+		</div>
+		<div class="buttons">
+			<a href="login.php">
+				<input type="button" class="btn" value="Login">
+			</a>
+			<input class="btn btn-inv" type="submit" name="register" onClick="validateForm()" value="Sign Up">
+		</div>
 
-			<div class="numbers">
-				<label>Roll No.
-					<input class="inputs" type="text" name="roll" required>
-				</label>
-				<label>Phone No.
-					<input class="inputs" type="tel" name="phone" required>
-				</label>
-			</div>
-			<div class="email">
-				<label>E-mail
-					<input class="inputs" type="email" name="email" required>
-				</label>
-			</div>
-			<div class="pwds">
-				<label>Password
-					<input class="inputs" type="password" name="pwd" required>
-				</label>
-				<label>Confirm Password
-					<input class="inputs" type="password" name="confPwd" required>
-				</label>
-			</div>
-			<div class="buttons">
-				<a href="login.php">
-					<input type="button" class="btn" value="Login">
-				</a>
-				<input class="btn btn-inv" type="submit" value="Sign Up">
-			</div>
+	</form>
+</div>
+<script src="./scripts/validate.js"></script>
+<script src="./scripts/register.js"></script>
 
-		</form>
-	</div>
-	<?php
-	require("./partials/footer/footer.php");
-	?>
-</body>
+<?php
+require("./partials/footer/footer.php");
+require("db/db.php");
 
-</html>
+if (isset($_POST['register'])) {
+
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+	$rno = $_POST['roll'];
+	$phone = $_POST['phone'];
+	$email = $_POST['email'];
+	$pwd = $_POST['pwd'];
+	$confPwd = $_POST['confPwd'];
+	$name = $fname . " " . $lname;
+
+	$password = password_hash($pwd, PASSWORD_DEFAULT);
+	// echo $name;
+
+	if (strcmp($pwd, $confPwd) == 0) {
+		$query = "INSERT INTO users VALUES (
+			'$rno', '$name', '$email', '$phone', '$password')";
+
+		if (mysqli_query($con, $query)) {
+			echo "<script>alert('SucessFully Registered');</script>";
+		} else {
+			echo "<script>alert('Error');</script>";
+		}
+	}
+}
+
+?>
