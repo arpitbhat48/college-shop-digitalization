@@ -1,9 +1,16 @@
 <?php
 $PAGE = "login";
 require("./partials/header/header.php");
+require("./components/page-title.php")
 ?>
 <link rel="stylesheet" href="styles/login.css">
-<h1>Log In</h1>
+
+<div class="container">
+	<?php
+	page_title("Login")
+	?>
+</div>
+
 <div class="centre">
 	<form action="" method="POST" onsubmit="return validateForm()">
 		<div class="roll">

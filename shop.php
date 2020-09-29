@@ -3,7 +3,7 @@
 <?php
 $PAGE = "shop";
 require('./partials/header/header.php');
-require('./partials/components/page-title.php')
+require('./components/page-title.php')
 ?>
 
 <div class="container">
@@ -15,6 +15,40 @@ require('./partials/components/page-title.php')
         <style>
             .shop-card {
                 background-color: var(--dark-blue);
+            }
+
+            .shop-card-image {
+                grid-area: "sci";
+            }
+
+            .shop-card-shop {
+                grid-area: "scs";
+            }
+
+            .shop-card-title {
+                grid-area: "sct";
+            }
+
+            .shop-card-cost {
+                grid-area: "scc";
+            }
+
+            .shop-card-avail {
+                grid-area: "sca";
+            }
+
+            .shop-card {
+                display: grid;
+                grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-areas:
+                    'sci sct sct sct sca'
+                    '.   scc scc .   .  '
+                    '.   sca sca sca sca';
+            }
+
+            .shop-cards {
+                padding: 3rem 0;
             }
         </style>
 
