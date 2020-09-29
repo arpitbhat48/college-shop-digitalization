@@ -1,0 +1,75 @@
+.shop-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  margin: 1rem;
+}
+
+.shop-card-data {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.shop-card-title-cost-avail {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.shop-card-title-cost {
+  display: flex;
+  justify-content: space-between;
+  font: 500 1.5rem "Montserrat";
+}
+
+.shop-card-title {
+  flex-grow: 1;
+}
+
+.shop-card-cost {
+  color: var(--yellow);
+}
+
+.shop-card-avail {
+  padding: 0.5rem 0;
+  font: 400 1.30rem "Montserrat";
+}
+
+.shop-card-desc-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop-card-desc {
+  flex-grow: 1;
+  font: 400 1.20rem "Montserrat";
+  padding-right: 1rem;
+}
+
+.shop-card-btn {
+  color: var(--dark-blue);
+  background-color: var(--yellow);
+  border: 0.25rem solid var(--yellow);
+  border-radius: 2rem;
+  font: 600 1.25rem "Montserrat";
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+}
+
+.shop-card-btn:hover {
+  background-color: var(--dark-blue);
+  color: var(--yellow);
+}
+
+.shop-card-btn > img {
+  height: 2.5rem;
+}
+
+.shop-card-btn > img:hover {
+  filter: invert(72%) sepia(100%) saturate(235%) hue-rotate(354deg)
+    brightness(101%) contrast(97%);
+}

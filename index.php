@@ -1,8 +1,6 @@
 <?php
 $PAGE = "home";
-?>
-<?php
-include("./partials/header/header.php");
+require('./components/header/header.php');
 ?>
 
 <link rel="stylesheet" href="styles/index.css">

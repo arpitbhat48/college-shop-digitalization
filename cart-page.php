@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="./styles/cart.css">
     <style>
         @media screen and (max-width: 400px) {
-            #one { 
+            #one {
                 float: none;
-                margin-right:0;
-                width:auto;
-                border:0;
-                border-bottom:2px solid #000;    
+                margin-right: 0;
+                width: auto;
+                border: 0;
+                border-bottom: 2px solid #000;
             }
         }
     </style>
@@ -64,16 +64,16 @@
                     <div class="total">
                         <h2 class="center">Checkout <h2>
                     </div>
-                    
+
                     <div class="amount">
                         <div class="price">₹501</div>
                         <div class="price">+ ₹220</div>
                         <div class="price">+ ₹100</div>
-                        <div class="price">+ ₹40</div>   
+                        <div class="price">+ ₹40</div>
                     </div>
-                    <div style= "margin-top: 60%;">
+                    <div style="margin-top: 60%;">
                         <hr>
-                        <h2 class="center" >Total : ₹860 </h2>
+                        <h2 class="center">Total : ₹860 </h2>
                         <div class="proceed-div">
                             <button class="proceed-btn">PROCEED TO PAY...</button>
                         </div>
@@ -84,7 +84,7 @@
     </div>
 
     <?php
-    require("./partials/footer/footer.php");
+    require("./components/footer/footer.php");
     ?>
 </body>
 

@@ -1,0 +1,10 @@
+footer {
+  background-color: #eeeeee;
+  padding: 30px;
+  text-align: center;
+}
+
+footer,
+.push {
+  height: 75px;
+}

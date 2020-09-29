@@ -1,8 +1,9 @@
 <?php
 $PAGE = "login";
-require("./partials/header/header.php");
-require("./components/page-title.php")
+require('./components/header/header.php');
+require('./components/page-title/page-title.php')
 ?>
+
 <link rel="stylesheet" href="styles/login.css">
 
 <div class="container">
@@ -36,7 +37,7 @@ require("./components/page-title.php")
 <script src="./scripts/login.js"></script>
 
 <?php
-require("./partials/footer/footer.php");
+require("./components/footer/footer.php");
 require("db/db.php");
 
 if (isset($_POST['login'])) {

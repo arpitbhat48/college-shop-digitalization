@@ -1,4 +1,4 @@
-<?php require("footer.styles.php") ?>
+<link rel="stylesheet" href="./components/footer/footer.css">
 
 <div class="push"></div>
 </div>

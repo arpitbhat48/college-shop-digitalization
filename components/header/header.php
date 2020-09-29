@@ -11,15 +11,15 @@
 
 <body>
 
-    <?php require("reset.styles.php");
-    require("header.styles.php") ?>
+    <link rel="stylesheet" href="./components/header/reset.css">
+    <link rel="stylesheet" href="./components/header/header.css">
     <?php
 
     // $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "login" => "login.php");
     $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php");
-	if (isset($_SESSION['rollno'])) {
-		$pages['logout'] = "logout.php";
-	} else {
+    if (isset($_SESSION['rollno'])) {
+        $pages['logout'] = "logout.php";
+    } else {
         $pages['login'] = "login.php";
     }
     ?>
