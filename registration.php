@@ -53,7 +53,7 @@ require("./partials/header/header.php");
 <script src="./scripts/register.js"></script>
 
 <?php
-require("./partials/footer/footer.php");
+require("./components/footer/footer.php");
 require("db/db.php");
 
 if (isset($_POST['register'])) {

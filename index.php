@@ -13,5 +13,5 @@ require('./components/header/header.php');
 
 
 <?php
-require("./partials/footer/footer.php");
+require("./components/footer/footer.php");
 ?>
