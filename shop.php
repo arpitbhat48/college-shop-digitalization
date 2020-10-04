@@ -3,7 +3,8 @@
 <?php
 $PAGE = "shop";
 require('./components/header/header.php');
-require('./components/page-title/page-title.php')
+require('./components/page-title/page-title.php');
+require("db/db.php");
 ?>
 
 <div class="container">
@@ -14,12 +15,13 @@ require('./components/page-title/page-title.php')
     <div class="shop-cards">
         <?php
         require('./components/shop-page-card/shop-page-card.php');
-        for ($x = 0; $x <= 10; $x++) {
+        $result = mysqli_query($con, "SELECT * FROM inventory");
+        while ($row = mysqli_fetch_assoc($result)) {
             shop_page_card(
-                "The Complete Semester One Bundle",
-                500,
-                50,
-                "Everthing that a semester one student needs, journal sheets, binders, cover pages, index pages..."
+                $row["item_name"],
+                $row["cost"],
+                $row["stock"],
+                $row["description"]
             );
         }
         ?>
