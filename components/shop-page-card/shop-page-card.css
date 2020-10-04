@@ -11,6 +11,7 @@
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex-grow: 1;
 }
 
@@ -47,7 +48,9 @@
 .shop-card-desc {
   flex-grow: 1;
   font: 400 1.20rem "Montserrat";
-  padding-right: 1rem;
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .shop-card-btn {
@@ -65,11 +68,11 @@
   color: var(--yellow);
 }
 
-.shop-card-btn > img {
-  height: 2.5rem;
+.shop-card-svg {
+  height: 2rem;
+  fill: var(--dark-blue);
 }
 
-.shop-card-btn > img:hover {
-  filter: invert(72%) sepia(100%) saturate(235%) hue-rotate(354deg)
-    brightness(101%) contrast(97%);
+.shop-card-btn:hover .shop-card-svg {
+  fill: var(--yellow);
 }

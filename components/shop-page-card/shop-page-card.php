@@ -2,6 +2,7 @@
 <?php
 function shop_page_card($title, $cost, $avail, $desc)
 {
+    $svg = file_get_contents("./components/shop-page-card/shopping-cart.svg");
     echo "
         <div class=\"shop-card\">
         <div class=\"shop-card-img\">
@@ -24,11 +25,11 @@ function shop_page_card($title, $cost, $avail, $desc)
             </div>
             <div class=\"shop-card-desc-btn\">
                 <div class=\"shop-card-desc\">
-                    $desc
+                    <div>$desc</div>
                 </div>
-                <a class=\"shop-card-btn\">
-                    <img src=\"./components/shop-page-card/shopping-cart.svg\" alt=\"add to cart\">
-                </a>
+                <button class=\"shop-card-btn\">
+                    $svg
+                </button>
             </div>
         </div>
         </div>";
