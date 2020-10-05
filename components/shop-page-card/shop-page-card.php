@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./components/shop-page-card/shop-page-card.css">
 <?php
-function shop_page_card($title, $cost, $stock, $desc)
+function shop_page_card($id, $title, $cost, $stock, $desc)
 {
     $svg = file_get_contents("./components/shop-page-card/shopping-cart.svg");
     echo "
@@ -27,9 +27,9 @@ function shop_page_card($title, $cost, $stock, $desc)
                 <div class=\"shop-card-desc\">
                     <div>$desc</div>
                 </div>
-                <button class=\"shop-card-btn\">
+                <a href='./addCart.php?id=$id' class=\"shop-card-btn\">
                     $svg
-                </button>
+                </a>
             </div>
         </div>
         </div>";

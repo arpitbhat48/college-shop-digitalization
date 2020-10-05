@@ -18,6 +18,7 @@ require("db/db.php");
         $result = mysqli_query($con, "SELECT * FROM inventory");
         while ($row = mysqli_fetch_assoc($result)) {
             shop_page_card(
+                $row["item_id"],
                 $row["item_name"],
                 $row["cost"],
                 $row["stock"],
