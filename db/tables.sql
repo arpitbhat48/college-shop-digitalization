@@ -37,14 +37,15 @@ CREATE TABLE order_items (
 );
 
 CREATE TABLE orders (
-	user_id INT PRIMARY KEY,
+	user_rno INT,
 	order_id INT,
+	FOREIGN KEY (user_rno) REFERENCES inventory(user_rno),
 	FOREIGN KEY (order_id) REFERENCES order_items(order_id)
 );
 
 CREATE TABLE cart (
-	user_id INT,
+	user_rno INT,
 	item_id INT,
-	FOREIGN KEY (user_id) REFERENCES orders(user_id),
+	FOREIGN KEY (user_rno) REFERENCES inventory(user_rno),
 	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
 );
