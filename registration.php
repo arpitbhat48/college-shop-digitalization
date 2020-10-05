@@ -1,6 +1,6 @@
 <?php
 $PAGE = "login";
-require("./partials/header/header.php");
+require("./components/header/header.php");
 ?>
 <link rel="stylesheet" type="text/css" href="styles/registration.css">
 
