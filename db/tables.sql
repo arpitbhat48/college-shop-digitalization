@@ -1,3 +1,5 @@
+-- CREATE DATABASE college_shop;
+
 USE college_shop;
 
 CREATE TABLE inventory (
