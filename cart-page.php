@@ -21,17 +21,17 @@ if(isset($_SESSION['rollno'])){
 <div class="container">
     <?php
     page_title("Cart");
+    require('./components/cart-page-card/cart-page-card.php');
     ?>
-    <div class="mid">
-        <div class='row items'>
-		<?php
-        require('./components/cart-page-card/cart-page-card.php');
-		$qry = "SELECT i.item_name, i.cost 
-				FROM cart c, inventory i 
-				WHERE c.item_id = i.item_id
+
+    <div class="cart-item">
+        <?php
+        $qry = "SELECT i.item_name, i.cost 
+                FROM cart c, inventory i 
+                WHERE c.item_id = i.item_id
                 AND c.user_rno = '$rno'";
         $result = mysqli_query($con, $qry);
-		
+        
         while ($row = mysqli_fetch_assoc($result)) {
             cart_page_card (
                 $row["item_name"],
@@ -39,31 +39,29 @@ if(isset($_SESSION['rollno'])){
             );
         }
         ?>
-
+    </div>
     
-            <div class="column">
-                <div class="total-qr-card">
-                    <div class="total">
-                        <h2 class="center">Checkout <h2>
-                    </div>
+    
+    <div class="centre checkout">
+        <div class="centre">
+            <h2 class="checkout-heading">Checkout <h2>
+        </div>
 
-                    <div class="amount">
-                        <div class="price">₹501</div>
-                        <div class="price">+ ₹220</div>
-                        <div class="price">+ ₹100</div>
-                        <div class="price">+ ₹40</div>
-                    </div>
-                    <div style="margin-top: 60%;">
-                        <hr>
-                        <h2 class="center">Total : ₹ <?php $total ?></h2>
-                        <div class="proceed-div">
-                            <button class="proceed-btn">PROCEED TO PAY...</button>
-                        </div>
-                    </div>
-                </div>
+        <div class="">
+            <div class="price">₹501</div>
+            <div class="price">+ ₹220</div>
+            <div class="price">+ ₹100</div>
+            <div class="price">+ ₹40</div>
+        </div>
+        <div>
+            <hr>
+            <h2 class="">Total : ₹ <?php $total ?></h2>
+            <div class="">
+                <button class="checkout-btn">PROCEED TO PAY</button>
             </div>
         </div>
     </div>
+    
 </div>
 <?php
 require("./components/footer/footer.php");

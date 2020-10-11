@@ -6,7 +6,7 @@ function cart_page_card($title, $cost) {
 	echo "
 	<div class=\"shop-card\">
 		<div class=\"shop-card-img\">
-			<img src=\"https://via.placeholder.com/300x200\" alt=\"placeholder\">
+			<img src=\"https://via.placeholder.com/200x100\" alt=\"placeholder\">
 		</div>
 
 		<div class=\"shop-card-data\">
