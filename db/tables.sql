@@ -44,6 +44,7 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE cart (
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	user_rno INT,
 	item_id INT,
 	FOREIGN KEY (user_rno) REFERENCES inventory(user_rno),
