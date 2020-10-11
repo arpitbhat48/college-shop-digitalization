@@ -28,14 +28,11 @@ if(isset($_SESSION['rollno'])){
         require('./components/cart-page-card/cart-page-card.php');
 		$qry = "SELECT i.item_name, i.cost 
 				FROM cart c, inventory i 
-				WHERE c.user_rno='$rno'";
+				WHERE c.item_id = i.item_id
+                AND c.user_rno = '$rno'";
         $result = mysqli_query($con, $qry);
 		
         while ($row = mysqli_fetch_assoc($result)) {
-			// echo $row['item_name'];
-			// echo $row['cost'];
-			// echo "<br>";
-
             cart_page_card (
                 $row["item_name"],
                 $row["cost"]
@@ -65,9 +62,9 @@ if(isset($_SESSION['rollno'])){
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 <?php
 require("./components/footer/footer.php");
 ?>
-</body>
-
-</html>
