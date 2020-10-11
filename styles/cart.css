@@ -1,6 +1,7 @@
-.center {
-	text-align: center;
+.container {
+	padding: 3rem 10%;
 }
+
 
 h1 {
 	/* margin: auto; */
