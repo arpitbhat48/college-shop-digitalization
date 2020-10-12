@@ -27,7 +27,7 @@ function shop_page_card($id, $title, $cost, $stock, $desc)
                 <div class=\"shop-card-desc\">
                     <div>$desc</div>
                 </div>
-                <a href='./addCart.php?id=$id' class=\"shop-card-btn\">
+                <a href='./cart-functions/addCart.php?id=$id' class=\"shop-card-btn\">
                     $svg
                 </a>
             </div>

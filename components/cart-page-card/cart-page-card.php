@@ -2,7 +2,7 @@
 
 <?php 
 
-function cart_page_card($title, $cost) {
+function cart_page_card($title, $cost, $id) {
 	echo "
 	<div class=\"shop-card\">
 		<div class=\"shop-card-img\">
@@ -19,6 +19,9 @@ function cart_page_card($title, $cost) {
 						₹$cost
 					</div>
 				</div>
+			</div>
+			<div>
+				<a href='./cart-functions/remove_item.php?id=$id'><button>Remove</button></a>
 			</div>
 		</div>
 	</div>

@@ -26,7 +26,7 @@ if(isset($_SESSION['rollno'])){
 
     <div class="cart-item">
         <?php
-        $qry = "SELECT i.item_name, i.cost 
+        $qry = "SELECT i.item_name, i.cost, c.id 
                 FROM cart c, inventory i 
                 WHERE c.item_id = i.item_id
                 AND c.user_rno = '$rno'";
@@ -35,7 +35,8 @@ if(isset($_SESSION['rollno'])){
         while ($row = mysqli_fetch_assoc($result)) {
             cart_page_card (
                 $row["item_name"],
-                $row["cost"]
+                $row["cost"],
+                $row["id"]
             );
         }
         ?>

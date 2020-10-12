@@ -35,10 +35,12 @@ CREATE TABLE filter_items (
 
 -- Contains all the items in a user's cart
 CREATE TABLE cart (
+	id INT NOT NULL AUTO_INCREMENT,
 	user_rno INT,
 	item_id INT,
 	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
-	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
+	FOREIGN KEY (item_id) REFERENCES inventory(item_id),
+	PRIMARY KEY (id)
 );
 
 -- To be handled later
