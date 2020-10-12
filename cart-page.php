@@ -17,14 +17,18 @@ if(isset($_SESSION['rollno'])){
     echo "<script>window.open('login.php','_self')</script>";
 }
 ?>
-
 <div class="container">
-    <?php
+<?php
+    
     page_title("Cart");
     require('./components/cart-page-card/cart-page-card.php');
     ?>
-
-    <div class="cart-item">
+</div>
+<div class="container container-grid">
+    
+    
+    
+    <div class="cart-item grid-item">
         <?php
         $qry = "SELECT i.item_name, i.cost, c.id 
                 FROM cart c, inventory i 
@@ -41,19 +45,25 @@ if(isset($_SESSION['rollno'])){
         }
         ?>
     </div>
-    
-    
-    <div class="centre checkout">
-        <div class="centre">
+    <div class="checkout grid-item">
+        <div class=" text-center">
             <h2 class="checkout-heading">Checkout <h2>
         </div>
 
-        <div class="">
-            <div class="price">₹501</div>
-            <div class="price">+ ₹220</div>
-            <div class="price">+ ₹100</div>
-            <div class="price">+ ₹40</div>
-        </div>
+        <div class="price">₹501</div>
+        <div class="price">+ ₹220</div>
+        <div class="price">+ ₹100</div>
+        <div class="price">+ ₹40</div>
+        <div class="price">+ ₹40</div>
+
+        <div class="price">+ ₹40</div>
+
+        <div class="price">+ ₹40</div>
+
+        <div class="price">+ ₹40</div>
+
+        <div class="price">+ ₹40</div>
+        
         <div>
             <hr>
             <h2 class="">Total : ₹ <?php $total ?></h2>
@@ -62,7 +72,7 @@ if(isset($_SESSION['rollno'])){
             </div>
         </div>
     </div>
-    
+       
 </div>
 <?php
 require("./components/footer/footer.php");
