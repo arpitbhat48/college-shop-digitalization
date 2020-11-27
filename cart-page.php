@@ -8,7 +8,7 @@ require('./components/page-title/page-title.php');
 require("db/db.php");
 ?>
  
- <?php
+<?php
 
 if(isset($_SESSION['rollno'])){
     $rno =$_SESSION['rollno'];
@@ -42,6 +42,7 @@ if(isset($_SESSION['rollno'])){
                 $row["cost"],
                 $row["id"]
             );
+            
         }
         ?>
     </div>
@@ -83,8 +84,8 @@ if(isset($_SESSION['rollno'])){
             }
         ?> 
     </div>
-       
 </div>
+
 <?php
 require("./components/footer/footer.php");
 ?>
