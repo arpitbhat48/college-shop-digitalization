@@ -43,17 +43,13 @@ CREATE TABLE cart (
 	PRIMARY KEY (id)
 );
 
--- To be handled later
-
--- CREATE TABLE orders (
--- 	user_rno INT,
--- 	order_id INT,
--- 	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
--- 	FOREIGN KEY (order_id) REFERENCES order_items(order_id)
--- );
-
--- CREATE TABLE order_items (
--- 	order_id INT AUTO_INCREMENT,
--- 	item_id INT,
--- 	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
--- );
+-- Contains all the orders
+CREATE TABLE orders (
+	order_id INT NOT NULL AUTO_INCREMENT,
+	user_rno INT,
+	order_id INT,
+	isPaid varchar(5) NOT NULL,
+  	date_time datetime NOT NULL
+	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
+	FOREIGN KEY (order_id) REFERENCES order_items(order_id)
+);
