@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="styles/cart.css">
 
 <?php
@@ -31,7 +30,7 @@ if(isset($_SESSION['rollno'])){
                 WHERE c.item_id = i.item_id
                 AND c.user_rno = '$rno'";
         $result = mysqli_query($con, $qry);
-
+        
         $prices = array();
         $sum = 0;
         while ($row = mysqli_fetch_assoc($result)) {
@@ -60,13 +59,7 @@ if(isset($_SESSION['rollno'])){
             if($sum == 0){
                 echo "
                 <div>
-                    <hr>
-                    <div class='total'>
-                        <h2>Total :-  ₹ $sum </h2>
-                    </div>
-                    <div class=''>
-                        <a href='./cart-page.php'><button disabled class='checkout-btn'>PROCEED TO PAY</button></a>
-                    </div>
+                    <h3>No products in Cart</h3>
                 </div>
                 ";
             } else {

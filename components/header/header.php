@@ -16,7 +16,7 @@
     <?php
 
     // $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "login" => "login.php");
-    $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php");
+    $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "orders" => "order_page.php");
     if (isset($_SESSION['rollno'])) {
         $pages['logout'] = "logout.php";
     } else {

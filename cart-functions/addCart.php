@@ -18,5 +18,6 @@
         }
     }else{
         echo "<script>window.alert('please login first')</script>";
+        echo "<script>window.open('../login.php','_self')</script>";
     }
 ?>

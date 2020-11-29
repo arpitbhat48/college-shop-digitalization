@@ -16,7 +16,7 @@
 
         while ($row = mysqli_fetch_assoc($result)) {
             $x = $row['item_id'];
-            $insert_order_query = "insert into orders(user_rno, item_id, date_time) values ($rno, $x, now())";
+            $insert_order_query = "insert into orders(user_rno, item_id, isPaid, date_time) values ($rno, $x, 'false', now())";
             if (mysqli_query($con, $insert_order_query)) {
 
                 // echo "<script>alert('SucessFully added');</script>";
@@ -35,7 +35,7 @@
                 break;
             }
         }
-        echo "<script>window.open('order_page.php','_self')</script>";
+        echo "<script>window.open('../order_page.php','_self')</script>";
     }else{
         echo "<script>window.alert('please login first')</script>";
         echo "<script>window.open('login.php','_self')</script>";
