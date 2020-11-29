@@ -52,10 +52,14 @@ if(isset($_SESSION['rollno'])){
         <?php
             $sum = 0; 
             $check = false;
-            foreach ($prices as $ind => $val){
-                $sum = $sum + $val;
-                echo "<div class='price'>+  {$val}</div>";
+            $result = mysqli_query($con, $qry);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $cost = $row["cost"];
+                $name = $row["item_name"];
+                $sum += $cost;
+                echo  "<div class='price'>" . $name . " " . $cost . "</div>";
             }
+            
             if($sum == 0){
                 echo "
                 <div>
