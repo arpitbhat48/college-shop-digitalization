@@ -24,7 +24,7 @@ if(isset($_SESSION['rollno'])){
     <div class="content">
         <div class="cart-items">
             <?php
-            $qry = "SELECT i.item_name, i.cost, c.id
+            $qry = "SELECT i.item_name, i.cost, c.id, i.image
                     FROM cart c, inventory i
                     WHERE c.item_id = i.item_id
                     AND c.user_rno = '$rno'";
@@ -38,9 +38,9 @@ if(isset($_SESSION['rollno'])){
                 cart_page_card (
                     $row["item_name"],
                     $row["cost"],
-                    $row["id"]
+                    $row["id"],
+                    'data:image/jpeg;base64,'.base64_encode($row["image"])
                 );
-
             }
             ?>
         </div>
