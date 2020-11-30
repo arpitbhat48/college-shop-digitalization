@@ -27,7 +27,7 @@ require("db/db.php");
 			<input type="text" class="inputs" name="item_stock" required>
 		</label>
 		<label>Image
-			<input type="file" class="inputs" name="item_image" required>
+			<input type="file" class="inputs" name="item_image">
 		</label>
 		<label>Description
 			<textarea name="item_desc" class="inputs" cols="30" rows="3"></textarea>
@@ -46,10 +46,10 @@ if (isset($_POST['insert'])) {
 	$cost = mysqli_real_escape_string($con, $_POST['item_cost']);
 	$stock = mysqli_real_escape_string($con, $_POST['item_stock']);
 	$desc = mysqli_real_escape_string($con, $_POST['item_desc']);
-	// $imgData = addslashes(file_get_contents($_FILES['userImage']['tmp_name']));
+	$image = addslashes(file_get_contents($_FILES['item_image']['tmp_name']));
 
-	$sql = "INSERT INTO inventory (item_name, cost, stock, description) VALUES 
-		('$name', '$cost', '$stock', '$desc')
+	$sql = "INSERT INTO inventory (item_name, cost, stock, description, image) VALUES 
+		('$name', '$cost', '$stock', '$desc', '$image')
 	";
 	if (mysqli_query($con, $sql)) {
 		echo "<script>alert('Product added')</script>";

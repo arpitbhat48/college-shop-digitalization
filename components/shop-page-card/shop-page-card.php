@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="./components/shop-page-card/shop-page-card.css">
 <?php
-function shop_page_card($id, $title, $cost, $stock, $desc)
+function shop_page_card($id, $title, $cost, $stock, $desc, $image)
 {
     $svg = file_get_contents("./components/shop-page-card/shopping-cart.svg");
     echo "
         <div class=\"shop-card\">
         <div class=\"shop-card-img\">
-            <img src=\"https://via.placeholder.com/300x200\" alt=\"placeholder\">
+            <img src=$image alt=\"placeholder\">
         </div>
 
         <div class=\"shop-card-data\">

@@ -7,7 +7,8 @@ CREATE TABLE inventory (
 	item_name VARCHAR(100),
 	cost INT,
 	stock INT,
-	description VARCHAR(100)
+	description VARCHAR(100),
+	image MEDIUMBLOB
 );
 
 -- Contains information about all the users
@@ -39,8 +40,7 @@ CREATE TABLE cart (
 	user_rno INT,
 	item_id INT,
 	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
-	FOREIGN KEY (item_id) REFERENCES inventory(item_id),
-	PRIMARY KEY (id)
+	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
 );
 
 -- Contains all the orders

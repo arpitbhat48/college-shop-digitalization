@@ -22,8 +22,10 @@ require("db/db.php");
                 $row["item_name"],
                 $row["cost"],
                 $row["stock"],
-                $row["description"]
+                $row["description"],
+                'data:image/jpeg;base64,'.base64_encode($row["image"])
             );
+            // echo 'data:image/jpeg;base64,'.base64_encode($row['image']);
         }
         ?>
     </div>
