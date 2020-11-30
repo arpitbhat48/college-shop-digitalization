@@ -1,61 +1,79 @@
 .container {
-	padding: 1rem 7.5%;
-	
-	/* justify-content: space-between; */
+  padding: 3rem 10%;
 }
 
-.container-grid {
-	display: grid;
-	grid-template-columns: auto auto;
+.content {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 1rem;
 }
-  
-.cart-item {
-	padding: 3rem 0;
-	/* display: flex; */
-	/* flex-direction: column; */
-	/* max-width: 70%; */
 
-} 
+@media only screen and (max-width: 1200px) {
+  .content {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .checkout {
+    grid-row: 1;
+  }
+}
 
 .checkout {
-	display: grid;
-	align-content: space-around;
-	justify-content: center;
-	background-color: var(--yellow);
-	height: auto;
-	max-height: 35rem;
-	border-radius: 1rem;
-	/* float: right; */
-	/* grid-area: 1 / col4-start / last-line / 6; */
-}
-
-.price{
-	float: inline-end;
-	display: inline;
-	font-size: 1.3rem;
-	font-weight: bold;
-	color: var(--dark-blue);
-}
-
-.text-center{
-	text-align: center;
+  background-color: var(--yellow);
+  border-radius: 1rem;
+  /* height: auto; */
+  margin-bottom: auto;
+  padding: 2rem 3rem;
+  color: var(--dark-blue);
 }
 
 .checkout-heading {
-	color: var(--dark-blue);
+  font-size: 2rem;
+  text-align: center;
 }
 
-.checkout-btn {
-	background-color: var(--dark-blue);
-	color: white;
-	font-size: 2rem;
-	border-radius: 10px;
+.prices {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: center;
 }
 
-.checkout-item {
-	color: var(--dark-blue);
-	display: inline;
-	font-size: 1.3rem;
-	font-weight: bold;
+.price {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.total-line {
+  margin: 1rem 0;
+  border-top: 5px solid var(--dark-blue);
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.order {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--dark-blue);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: var(--white);
+  border: none;
 }
