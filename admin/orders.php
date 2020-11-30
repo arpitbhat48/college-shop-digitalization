@@ -35,21 +35,31 @@
         <?php
             if(isset($_POST['search']) && isset($_POST['roll_no'])){
                 $roll_no = $_POST['roll_no'];
-                $search_query = "select * from orders where isPaid = 'false' and user_rno like '%$roll_no%'";
+                $search_query = "select * from orders where is_paid = 'false' and user_rno like '%$roll_no%'";
                 $search_result = mysqli_query($con, $search_query);
                 if(mysqli_num_rows($search_result) == 0){
                     echo " No orders found";
                 }else{
-                    while($row = mysqli_fetch_assoc($search_result)){
-                        $rno = $row['user_rno'];
-                        $order_id = $row['order_id'];
-                        $item_id = $row['item_id'];
-                        $date_time = $row['date_time'];
+                    $order_query = "select * from orders where is_paid = 'false'";
+                $result = mysqli_query($con, $order_query);
+
+                while($row = mysqli_fetch_assoc($result)){
+                    $rno = $row['user_rno'];
+                    $order_id = $row['order_id'];
+                    $date_time = $row['date_time'];
+
+                    //fetch items of order_id $order_id 
+                    $fetch_items = "select * from order_items where order_id = $order_id";
+                    $items_result = mysqli_query($con, $fetch_items);
+
+                    while($row2 = mysqli_fetch_assoc($items_result)){
+                        $item_id = $row2['item_id'];                    
+
                         $price_query = "select * from inventory where item_id = $item_id";
 
                         $price_result = mysqli_query($con, $price_query);
-                        while($row1 = mysqli_fetch_assoc($price_result)){
-                            $price = $row1['cost'];
+                        while($row2 = mysqli_fetch_assoc($price_result)){
+                            $price = $row2['cost'];
                         }
 
                         echo "
@@ -60,25 +70,32 @@
                                 <td>$price</td>
                                 <td>$date_time</td>
                                 <td><input type='checkbox' name='checkout[]' value='$order_id' /></td>
-
-                            </tr>
-                            ";
+                        </tr>
+                        ";
                     }
                 }
+            }
             }else{
-                $order_query = "select * from orders where isPaid = 'false'";
+                $order_query = "select * from orders where is_paid = 'false'";
                 $result = mysqli_query($con, $order_query);
 
                 while($row = mysqli_fetch_assoc($result)){
                     $rno = $row['user_rno'];
                     $order_id = $row['order_id'];
-                    $item_id = $row['item_id'];
                     $date_time = $row['date_time'];
+
+                    //fetch items of order_id $order_id 
+                    $fetch_items = "select * from order_items where order_id = $order_id";
+                    $items_result = mysqli_query($con, $fetch_items);
+
+                    while($row2 = mysqli_fetch_assoc($items_result)){
+                        $item_id = $row2['item_id'];                    
+
                     $price_query = "select * from inventory where item_id = $item_id";
 
                     $price_result = mysqli_query($con, $price_query);
-                    while($row1 = mysqli_fetch_assoc($price_result)){
-                        $price = $row1['cost'];
+                    while($row2 = mysqli_fetch_assoc($price_result)){
+                        $price = $row2['cost'];
                     }
 
                     echo "
@@ -91,6 +108,7 @@
                             <td><input type='checkbox' name='checkout[]' value='$order_id' /></td>
                        </tr>
                     ";
+                    }
                 }
             }
 
@@ -123,7 +141,7 @@
             $update_query = "UPDATE orders set isPaid = '$true' where order_id = $id"; 
             mysqli_query($con, $update_query);
         }
-        echo "<script>window.alert($sum)</script>";
-        echo "<script>window.open('./orders.php','_self')</script>";
+        echo $sum;
+        // echo "<script>window.open('./orders.php','_self')</script>";
     }
 ?>
