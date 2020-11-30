@@ -30,7 +30,8 @@
 }
 
 .price{
-	float: right;
+	float: inline-end;
+	display: inline;
 	font-size: 1.3rem;
 	font-weight: bold;
 	color: var(--dark-blue);

@@ -21,7 +21,7 @@ require('./components/page-title/page-title.php')
 		</div>
 		<div class="pwd">
 			<label>Password
-				<a class="forgot" href="#">Forgot Password</a>
+				<a class="forgot" href="forgotPassword.php">Forgot Password</a>
 				<input type="password" class="inputs" name="pwd" required>
 			</label>
 		</div>
@@ -41,8 +41,10 @@ require("./components/footer/footer.php");
 require("db/db.php");
 
 if (isset($_POST['login'])) {
-	$rno = $_POST['roll'];
-	$pwd = $_POST['pwd'];
+
+	// 
+	$rno = mysqli_real_escape_string($con, $_POST['roll']);
+	$pwd = mysqli_real_escape_string($con, $_POST['pwd']);
 
 	$query = "SELECT * FROM users WHERE user_rno = '$rno'";
 	$run_query = mysqli_query($con, $query);
