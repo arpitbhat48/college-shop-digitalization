@@ -35,7 +35,7 @@ CREATE TABLE filter_items (
 
 -- Contains all the items in a user's cart
 CREATE TABLE cart (
-	id INT NOT NULL AUTO_INCREMENT,
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	user_rno INT,
 	item_id INT,
 	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
@@ -45,11 +45,17 @@ CREATE TABLE cart (
 
 -- Contains all the orders
 CREATE TABLE orders (
-	order_id INT NOT NULL AUTO_INCREMENT,
+	order_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	user_rno INT,
-	order_id INT,
-	isPaid varchar(5) NOT NULL,
+	is_paid varchar(5) NOT NULL,
   	date_time datetime NOT NULL
-	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
-	FOREIGN KEY (order_id) REFERENCES order_items(order_id)
+	FOREIGN KEY (user_rno) REFERENCES users(user_rno)
+);
+
+-- Contains all the orders with items
+CREATE TABLE order_items (
+	order_id INT,
+	item_id INT,
+	FOREIGN KEY (order_id) REFERENCES orders(order_id),
+	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
 );
