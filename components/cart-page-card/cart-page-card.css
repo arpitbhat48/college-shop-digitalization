@@ -1,46 +1,62 @@
-.shop-card {
-	padding: 2rem;
-	border-radius: 1rem;
-	background-color: var(--dark-blue);
-	color: var(--white);
-	display: flex;
-	margin: 1rem;
+.cart-card {
+  background-color: var(--dark-blue);
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.shop-card-data {
-	padding: 0 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	flex-grow: 1;
+.cart-card-img {
+  border-radius: 1rem;
+  align-self: center;
+  justify-self: center;
 }
 
-.shop-card-title-cost-avail {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
+.cart-card-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  grid-template-areas: "title rem" "cost cost";
+  padding: 0 1rem;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: left;
 }
 
-.shop-card-title-cost {
-	display: flex;
-	justify-content: space-between;
-	font: 500 1.5rem "Montserrat";
+.cart-card-title {
+  grid-area: title;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: auto;
 }
 
-.shop-card-title {
-	flex-grow: 1;
+.cart-card-cost {
+  grid-area: cost;
+  color: var(--yellow);
+  font-size: 1.2rem;
 }
 
-.shop-card-cost {
-	color: var(--yellow);
+.cart-card-remove {
+  grid-area: rem;
+  text-decoration: none;
 }
 
-
-.shop-card-svg {
-	height: 2rem;
-	fill: var(--dark-blue);
+.cart-card-remove > button {
+  border: none;
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-
-.shop-card-svg {
-	fill: var(--yellow);
-}  

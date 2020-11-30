@@ -1,28 +1,21 @@
 <link rel="stylesheet" href="./components/cart-page-card/cart-page-card.css">
 
-<?php 
+<?php
 
 function cart_page_card($title, $cost, $id) {
 	echo "
-	<div class=\"shop-card\">
-		<div class=\"shop-card-img\">
+	<div class=\"cart-card\">
+		<div class=\"cart-card-img\">
 			<img src=\"https://via.placeholder.com/200x100\" alt=\"placeholder\">
 		</div>
-
-		<div class=\"shop-card-data\">
-			<div class=\"shop-card-title-cost-avail\">
-				<div class=\"shop-card-title-cost\">
-					<div class=\"shop-card-title\">
-						$title
-					</div>
-					<div class=\"shop-card-cost\">
-						₹$cost
-					</div>
-				</div>
+		<div class=\"cart-card-content\">
+			<div class=\"cart-card-title\">
+				$title
 			</div>
-			<div>
-				<a href='./cart-functions/remove_item.php?id=$id'><button>Remove</button></a>
+			<div class=\"cart-card-cost\">
+				₹ $cost
 			</div>
+			<a class=\"cart-card-remove\" href='./cart-functions/remove_item.php?id=$id'><button>✕</button></a>
 		</div>
 	</div>
 	";
