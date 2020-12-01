@@ -2,7 +2,6 @@
 $PAGE = "login";
 require('../components/header/admin_header.php');
 require('../components/page-title/admin_page_title.php');
-echo $_SESSION['admin'];
 
 if (isset($_SESSION['admin'])) {
 	header("Location: insert.php");

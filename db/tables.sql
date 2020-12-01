@@ -26,7 +26,7 @@ CREATE TABLE cart (
 	user_rno INT,
 	item_id INT,
 	FOREIGN KEY (user_rno) REFERENCES users(user_rno),
-	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
+	FOREIGN KEY (item_id) REFERENCES inventory(item_id) ON DELETE CASCADE
 );
 
 -- Contains all the orders
@@ -43,7 +43,7 @@ CREATE TABLE order_items (
 	order_id INT,
 	item_id INT,
 	FOREIGN KEY (order_id) REFERENCES orders(order_id),
-	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
+	FOREIGN KEY (item_id) REFERENCES inventory(item_id) ON DELETE CASCADE
 );
 
 -- Contains information about the admin
