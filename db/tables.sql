@@ -20,20 +20,6 @@ CREATE TABLE users (
 	password VARCHAR(128)
 );
 
--- Contains the names of all the 'filters' used on the shop page
-CREATE TABLE filter_names (
-	filter_id INT PRIMARY KEY AUTO_INCREMENT,
-	filter_name VARCHAR(50)
-);
-
--- Contains all the items for every 'filter' mentioned in the 'filter_name' table
-CREATE TABLE filter_items (
-	filter_id INT,
-	item_id INT,
-	FOREIGN KEY (item_id) REFERENCES inventory(item_id),
-	FOREIGN KEY (filter_id) REFERENCES filter_names(filter_id)
-);
-
 -- Contains all the items in a user's cart
 CREATE TABLE cart (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -48,7 +34,7 @@ CREATE TABLE orders (
 	order_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	user_rno INT,
 	is_paid varchar(5) NOT NULL,
-  	date_time datetime NOT NULL
+  	date_time datetime NOT NULL,
 	FOREIGN KEY (user_rno) REFERENCES users(user_rno)
 );
 
@@ -58,4 +44,10 @@ CREATE TABLE order_items (
 	item_id INT,
 	FOREIGN KEY (order_id) REFERENCES orders(order_id),
 	FOREIGN KEY (item_id) REFERENCES inventory(item_id)
+);
+
+-- Contains information about the admin
+CREATE TABLE admin_users (
+	user_name INT PRIMARY KEY,
+	password VARCHAR(128)
 );
