@@ -18,7 +18,7 @@
 
     // $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "login" => "login.php");
     $pages = array("insert" => "insert.php", "orders" => "orders.php");
-    if (isset($_SESSION['rollno'])) {
+    if (isset($_SESSION['admin'])) {
         $pages['logout'] = "logout.php";
     } else {
         $pages['login'] = "login.php";
