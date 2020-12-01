@@ -47,7 +47,7 @@ CREATE TABLE order_items (
 );
 
 -- Contains information about the admin
-CREATE TABLE admin_users (
-	user_name INT PRIMARY KEY,
+CREATE TABLE admin (
+	username VARCHAR(32) PRIMARY KEY,
 	password VARCHAR(128)
 );
