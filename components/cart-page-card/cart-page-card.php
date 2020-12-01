@@ -2,11 +2,11 @@
 
 <?php
 
-function cart_page_card($title, $cost, $id) {
+function cart_page_card($title, $cost, $id, $image) {
 	echo "
 	<div class=\"cart-card\">
 		<div class=\"cart-card-img\">
-			<img src=\"https://via.placeholder.com/200x100\" alt=\"placeholder\">
+			<img src=$image alt=\"placeholder\">
 		</div>
 		<div class=\"cart-card-content\">
 			<div class=\"cart-card-title\">

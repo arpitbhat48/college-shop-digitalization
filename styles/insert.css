@@ -1,0 +1,89 @@
+.container {
+  padding: 3rem 10%;
+}
+
+.insert-form {
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: var(--dark-blue);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2.5fr 1.5fr;
+  grid-template-areas: "title title" "name cost" "stock image" "desc desc"
+    "submit submit";
+  gap: 2rem 1rem;
+}
+
+.insert-title {
+  font-size: 2rem;
+  color: var(--yellow);
+  grid-area: title;
+}
+
+.insert-form label {
+  color: var(--white);
+  font-weight: bold;
+}
+
+.insert-name {
+  grid-area: name;
+}
+
+.insert-cost {
+  grid-area: cost;
+}
+
+.insert-stock {
+  grid-area: stock;
+}
+
+.insert-image {
+  grid-area: image;
+}
+
+.insert-desc {
+  grid-area: desc;
+  display: flex;
+  flex-direction: column;
+}
+.insert-desc textarea {
+  height: 100%;
+  resize: none;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+.insert-submit {
+  grid-area: submit;
+  color: var(--dark-blue);
+  background-color: var(--yellow);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+}
+
+.insert-name,
+.insert-cost,
+.insert-stock,
+.insert-image {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+  justify-content: center;
+}
+
+.insert-name input,
+.insert-cost input,
+.insert-stock input {
+  height: 100%;
+  width: 100%;
+}
+
+.insert-image input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

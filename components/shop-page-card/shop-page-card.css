@@ -3,8 +3,14 @@
   border-radius: 1rem;
   background-color: var(--dark-blue);
   color: var(--white);
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% 70%;
   margin: 1rem;
+}
+
+.shop-card-img img {
+  height: 100%;
+  width: auto;
 }
 
 .shop-card-data {

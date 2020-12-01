@@ -1,3 +1,4 @@
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +12,12 @@
 
 <body>
 
-    <link rel="stylesheet" href="components/header/reset.css">
-    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="../components/header/reset.css">
+    <link rel="stylesheet" href="../components/header/header.css">
     <?php
 
     // $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "login" => "login.php");
-    $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "orders" => "order_page.php");
+    $pages = array("insert" => "insert.php", "orders" => "orders.php");
     if (isset($_SESSION['rollno'])) {
         $pages['logout'] = "logout.php";
     } else {
@@ -26,7 +27,7 @@
     <div class="wrapper">
         <header>
             <div class="logo">
-                <a href="index.php">
+                <a href="../index.php">
                     <span class="logo1">college</span><span class="logo2">shop</span>
                 </a>
             </div>

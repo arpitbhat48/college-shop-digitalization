@@ -3,7 +3,8 @@
   margin-bottom: 1rem;
   padding: 2rem;
   border-radius: 1rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% 70%;
   align-items: center;
   justify-content: center;
 }
@@ -12,6 +13,11 @@
   border-radius: 1rem;
   align-self: center;
   justify-self: center;
+}
+
+.cart-card-img img {
+  height: auto;
+  max-width: 100%;
 }
 
 .cart-card-content {
