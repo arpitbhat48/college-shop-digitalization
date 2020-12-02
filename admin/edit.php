@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="../styles/insert.css">
+<link rel="stylesheet" href="../styles/edit.css">
 
 <?php
-$PAGE = "insert";
+$PAGE = "edit";
 require('../components/header/admin_header.php');
 require('../components/page-title/admin_page_title.php');
 require("../db/db.php");
@@ -11,9 +11,9 @@ require("../db/db.php");
 	<?php
 	page_title("Edit Products");
 	?>
-	<div class="shop-cards">
+	<div class="edit-cards">
         <?php
-        require('../components/edit-card/edit-card.php');
+        require('../components/edit-page-card/edit-page-card.php');
         $result = mysqli_query($con, "SELECT * FROM inventory");
         while ($row = mysqli_fetch_assoc($result)) {
             edit_card(
