@@ -1,10 +1,15 @@
 <link rel="stylesheet" href="../styles/insert.css">
 
 <?php
+require("../db/db.php");
 $PAGE = "insert";
 require('../components/header/admin_header.php');
 require('../components/page-title/admin_page_title.php');
-require("../db/db.php");
+
+if (!isset($_SESSION['admin'])) {
+    echo "<script>window.alert('please login first')</script>";
+    echo "<script>window.open('login.php','_self')</script>";
+}
 ?>
 
 <div class="container">

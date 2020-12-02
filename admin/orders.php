@@ -2,11 +2,16 @@
 <link rel="stylesheet" href="../styles/orders.css">
 
 <?php
-    //for presenting order on admin side
-    $PAGE = "orders";
-    require('../components/header/admin_header.php');
-    require('../components/page-title/admin_page_title.php');
-    require("../db/db.php");
+//for presenting order on admin side
+require("../db/db.php");
+$PAGE = "orders";
+require('../components/header/admin_header.php');
+require('../components/page-title/admin_page_title.php');
+
+if (!isset($_SESSION['admin'])) {
+    echo "<script>window.alert('please login first')</script>";
+    echo "<script>window.open('login.php','_self')</script>";
+}
 ?>
 
 <div class="container">
