@@ -3,17 +3,17 @@
 <?php
     //for presenting order
 
-    $PAGE = "";
+    $PAGE = "orders";
     require('./components/header/header.php');
     require('./components/page-title/page-title.php');
     require("db/db.php");
 ?>
 
 <div class="container">
-    <?php 
+    <?php
         page_title('Your Orders');
     ?>
-        
+
     <?php
         if(isset($_SESSION['rollno'])){
             $rno =$_SESSION['rollno'];
@@ -36,12 +36,12 @@
                                 </tr>
                             </thead>
                             <tbody>";
-                
+
                 $sum = 0;
                 while ($row = mysqli_fetch_assoc($result)) {
                     $order_id = $row['order_id'];
                     $date = $row['date_time'];
-    
+
                     // to fetch items of that order_id
                     $order_query = "select * from order_items where order_id = $order_id";
                     $order_result = mysqli_query($con, $order_query);
@@ -64,19 +64,19 @@
                         $sum = $sum + $price;
                     }
                 }
-                
+
                 echo "
                             </tbody>
                         </table>
                     </div>
                     ";
-                    
+
                 echo "<div class='total-amount'>
                         Total :- ₹$sum /.
                     </div>";
             }
 
-            echo " <div class='titles'> Previous Orders </div>";    
+            echo " <div class='titles'> Previous Orders </div>";
             $order_query = "select * from orders where user_rno = $rno and is_paid = 'true'";
 
             $result = mysqli_query($con, $order_query);
@@ -95,11 +95,11 @@
                                 </tr>
                             </thead>
                             <tbody>";
-                
+
                 while ($row = mysqli_fetch_assoc($result)) {
                     $order_id = $row['order_id'];
                     $date = $row['date_time'];
-    
+
                     // to fetch items of that order_id
                     $order_query = "select * from order_items where order_id = $order_id";
                     $order_result = mysqli_query($con, $order_query);
@@ -121,15 +121,15 @@
                         ";
                     }
                 }
-                
+
                 echo "
                             </tbody>
                         </table>
                     </div>
                     ";
             }
-            
-        
+
+
         }else{
             echo "<script>window.alert('please login first')</script>";
             echo "<script>window.open('login.php','_self')</script>";
