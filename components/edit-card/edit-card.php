@@ -17,7 +17,8 @@ function edit_card($id, $title, $cost, $stock, $desc, $image)
 				<div class=\"shop-card-title-cost-avail\">
 					<div class=\"shop-card-title-cost\">
 						<div class=\"shop-card-title\">
-							<input type=\"text\" value=$title name=\"title\">
+							<!-- <input type=\"text\" value=".$title." name=\"title\"> -->
+							<textarea cols=\"20\" rows=\"1\" name=\"title\">$title</textarea>
 						</div>
 						<div class=\"shop-card-cost\">
 							₹<input type=\"text\" value=$cost name=\"cost\">
@@ -57,7 +58,7 @@ function edit_card($id, $title, $cost, $stock, $desc, $image)
 
 		// echo $sql;
 		if (mysqli_query($con, $sql)) {
-			echo "<script>window.open('../admin/edit.php','_self')</script>";
+			echo "<script>window.open('../admin/insert.php','_self')</script>";
 		} else {
 			echo "<script>window.alert('Something went Wrong')</script>";
 		}

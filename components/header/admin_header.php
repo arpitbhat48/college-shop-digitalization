@@ -17,7 +17,7 @@
     <?php
 
     // $pages = array("home" => "index.php", "shop" => "shop.php", "cart" => "cart-page.php", "login" => "login.php");
-    $pages = array("insert" => "insert.php", "orders" => "orders.php");
+    $pages = array("insert" => "insert.php", "edit" => "edit.php", "orders" => "orders.php");
     if (isset($_SESSION['admin'])) {
         $pages['logout'] = "logout.php";
     } else {
