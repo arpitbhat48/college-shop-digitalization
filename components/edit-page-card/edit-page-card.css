@@ -71,6 +71,7 @@
   border: 2px solid var(--yellow);
   font-weight: bold;
   color: var(--dark-blue);
+  cursor: pointer;
 }
 
 .edit-buttons input:hover {

@@ -61,8 +61,13 @@
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 2rem;
-  border: none;
+  border: 2px solid var(--yellow);
   outline: none;
+  cursor: pointer;
+}
+.insert-submit:hover {
+  color: var(--yellow);
+  background-color: var(--dark-blue);
 }
 
 .insert-name,
