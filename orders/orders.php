@@ -35,6 +35,15 @@
         //         //after inserting to orders table delete from cart table
                 $empty_cart = "delete from cart where user_rno = $rno and item_id = $x";
                 if (mysqli_query($con, $empty_cart)) {
+                        $find_stock = "select * from inventory where item_id = $x";
+                        $stock_result = mysqli_query($con, $find_stock);
+                        while($row3 = mysqli_fetch_assoc($stock_result)){
+                            $stock_quan = $row3['stock'];
+                        }
+                        $stock_quan = $stock_quan - 1;
+                        //update inventory quantity
+                        $update_inventory = "update inventory set stock = $stock_quan where item_id = $x";
+                        mysqli_query($con, $update_inventory);
         //             // echo "<script>alert('SucessFully deleted');</script>";
                 } else {
                     echo "<script>alert('Error');</script>";
