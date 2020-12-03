@@ -46,7 +46,7 @@
                 break;
             }
         }
-        echo "<script>window.open('../order_page.php','_self')</script>";
+        echo "<script>window.open('../orders.php','_self')</script>";
 
     }else{
         echo "<script>window.alert('please login first')</script>";

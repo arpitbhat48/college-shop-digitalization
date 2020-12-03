@@ -12,9 +12,9 @@
             } else {
                 echo "<script>alert('Error');</script>";
             }
-            echo "<script>window.open('../cart-page.php','_self')</script>";
+            echo "<script>window.open('../cart.php','_self')</script>";
         }else{
-            echo "<script>window.open('../cart-page.php','_self')</script>";
+            echo "<script>window.open('../cart.php','_self')</script>";
         }
     }else{
         echo "<script>window.alert('please login first')</script>";
