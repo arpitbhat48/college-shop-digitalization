@@ -2,7 +2,7 @@
 <?php
 function shop_page_card($id, $title, $cost, $stock, $desc, $image)
 {
-    $svg = file_get_contents("./components/shop-page-card/shopping-cart.svg");
+    $svg = file_get_contents("C:/xampp/htdocs/college-shop-digitization/components/shop-page-card/shopping-cart.svg");
     echo "
         <div class=\"shop-card\">
         <div class=\"shop-card-img\">
