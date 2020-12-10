@@ -1,12 +1,5 @@
 <link rel="stylesheet" href="styles/shop.css">
 
-<?php
-$PAGE = "shop";
-require('./components/header/header.php');
-require('./components/page-title/page-title.php');
-require("db/db.php");
-?>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -18,12 +11,20 @@ require("db/db.php");
     });
 </script>
 
+<?php
+$PAGE = "shop";
+require('./components/header/header.php');
+require('./components/page-title/page-title.php');
+require("db/db.php");
+?>
+
 <div class="container">
     <?php
     page_title("Shop");
     ?>
 
     <div class="shop-cards" id="shop-cards">
+
         <?php
         require('./components/shop-page-card/shop-page-card.php');
         $result = mysqli_query($con, "SELECT * FROM inventory LIMIT 2");
@@ -42,6 +43,7 @@ require("db/db.php");
             echo "No products available";
         }
         ?>
+        
     </div>
     <button id="btn">Load More Products</button>
 </div>

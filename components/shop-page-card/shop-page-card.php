@@ -1,4 +1,32 @@
 <link rel="stylesheet" href="./components/shop-page-card/shop-page-card.css">
+
+<script>
+      function addToCart(id) {
+            $('p').html('');
+            $.ajax({
+				url: "cart-functions/addToCart.php",
+				type: "POST",
+				data: {
+					id: id,
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+                        var success = '#success' + id;
+						$(success).html('Produt inserted successfully !');
+					}
+					else if(dataResult.statusCode==201){
+						alert("Error occured !");
+                    } else if(dataResult.statusCode==202){
+                        window.alert('please login first');
+                        window.open('login.php','_self');
+                    }
+				}
+			});
+        }
+</script>
+
 <?php
 function shop_page_card($id, $title, $cost, $stock, $desc, $image)
 {
@@ -27,10 +55,13 @@ function shop_page_card($id, $title, $cost, $stock, $desc, $image)
                 <div class=\"shop-card-desc\">
                     <div>$desc</div>
                 </div>
-                <a href='./cart-functions/addCart.php?id=$id' class=\"shop-card-btn\">
+                <button class=\"shop-card-btn\" onclick=\"addToCart($id)\">
                     $svg
-                </a>
+                </button>
             </div>
         </div>
-        </div>";
+        </div>
+
+        <p id=\"success$id\"></p>
+    ";
 }
