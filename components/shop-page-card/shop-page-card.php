@@ -14,7 +14,12 @@
 					var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
                         var success = '#success' + id;
-						$(success).html('Produt inserted successfully !');
+						$(success).html('Added to cart!').addClass('success');
+
+                        setTimeout(() => {
+                            const s = '#success' + id;
+                            $(s).html('').removeClass('success')
+                        }, 5000)
 					}
 					else if(dataResult.statusCode==201){
 						alert("Error occured !");
@@ -60,8 +65,8 @@ function shop_page_card($id, $title, $cost, $stock, $desc, $image)
                 </button>
             </div>
         </div>
+        <p id=\"success$id\"></p>
         </div>
 
-        <p id=\"success$id\"></p>
     ";
 }

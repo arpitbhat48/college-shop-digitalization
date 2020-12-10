@@ -43,9 +43,9 @@ require("db/db.php");
             echo "No products available";
         }
         ?>
-        
+
     </div>
-    <button id="btn">Load More Products</button>
+    <button id="btn" class="load-more">More Products ▼</button>
 </div>
 
 <?php
