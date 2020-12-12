@@ -1,41 +1,40 @@
 <link rel="stylesheet" href="./components/shop-page-card/shop-page-card.css">
 
 <script>
-      function addToCart(id) {
-            $('p').html('');
-            $.ajax({
-				url: "cart-functions/addToCart.php",
-				type: "POST",
-				data: {
-					id: id,
-				},
-				cache: false,
-				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
-					if(dataResult.statusCode==200){
-                        var success = '#success' + id;
-						$(success).html('Added to cart!').addClass('success');
+    function addToCart(id) {
+        $.ajax({
+            url: "cart-functions/addToCart.php",
+            type: "POST",
+            data: {
+                id: id,
+            },
+            cache: false,
+            success: function(dataResult) {
+                console.log(dataResult)
+                dataResult = JSON.parse(dataResult);
+                if (dataResult.statusCode == 200) {
+                    let success = '#success' + id;
+                    $(success).html('Added to cart!').addClass('success');
 
-                        setTimeout(() => {
-                            const s = '#success' + id;
-                            $(s).html('').removeClass('success')
-                        }, 5000)
-					}
-					else if(dataResult.statusCode==201){
-						alert("Error occured !");
-                    } else if(dataResult.statusCode==202){
-                        window.alert('please login first');
-                        window.open('login.php','_self');
-                    }
-				}
-			});
-        }
+                    setTimeout(() => {
+                        $(success).html('').removeClass('success')
+                    }, 2000)
+                } else if (dataResult.statusCode == 201) {
+                    alert("Error occured !");
+                } else if (dataResult.statusCode == 202) {
+                    window.alert('please login first');
+                    window.open('login.php', '_self');
+                }
+            }
+        });
+    }
 </script>
 
 <?php
 function shop_page_card($id, $title, $cost, $stock, $desc, $image)
 {
-    $svg = file_get_contents("C:/xampp/htdocs/college-shop-digitization/components/shop-page-card/shopping-cart.svg");
+    $svg = file_get_contents(__DIR__ . "/shopping-cart.svg");
+
     echo "
         <div class=\"shop-card\">
         <div class=\"shop-card-img\">
