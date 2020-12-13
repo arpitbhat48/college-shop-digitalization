@@ -6,7 +6,9 @@
         var cardCount = 2;
         $("#btn").click(function() {
             cardCount += 2;
-            $("#shop-cards").load("components/shop-page-card/load_cards.php", {cardCount: cardCount});
+            $("#shop-cards").load("load_cards.php", {
+                cardCount: cardCount
+            });
         });
     });
 </script>
@@ -36,7 +38,7 @@ require("db/db.php");
                     $row["cost"],
                     $row["stock"],
                     $row["description"],
-                    'data:image/jpeg;base64,'.base64_encode($row["image"])
+                    'data:image/jpeg;base64,' . base64_encode($row["image"])
                 );
             }
         } else {

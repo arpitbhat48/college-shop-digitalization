@@ -45,8 +45,7 @@
 <?php
 function shop_page_card($id, $title, $cost, $stock, $desc, $image)
 {
-    $svg = file_get_contents(__DIR__ . "/shopping-cart.svg");
-
+    $svg = file_get_contents("./images/shopping-cart.svg");
     echo "
         <div class=\"shop-card\">
         <div class=\"shop-card-img\">

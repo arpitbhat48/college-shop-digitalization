@@ -1,7 +1,8 @@
 <?php
-require(substr(__DIR__, 0, -25) . "db\db.php");
-require('shop-page-card.php');
+require("db/db.php");
+require('./components/shop-page-card/shop-page-card.php');
 $newCardCount = $_POST['cardCount'];
+
 
 $result = mysqli_query($con, "SELECT * FROM inventory LIMIT $newCardCount");
 if (mysqli_num_rows($result) > 0) {
