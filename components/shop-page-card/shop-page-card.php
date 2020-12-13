@@ -1,23 +1,34 @@
 <link rel="stylesheet" href="./components/shop-page-card/shop-page-card.css">
 
 <script>
-    function addToCart(id) {
-        $.ajax({
-            url: "cart-functions/addToCart.php",
-            type: "POST",
-            data: {
-                id: id,
-            },
-            cache: false,
-            success: function(dataResult) {
+    async function addToCart(id) {
+        fetch('cart-functions/addToCart.php', {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+            .then(val => val.json())
+            .then(dataResult => {
                 console.log(dataResult)
-                dataResult = JSON.parse(dataResult);
+
                 if (dataResult.statusCode == 200) {
-                    let success = '#success' + id;
-                    $(success).html('Added to cart!').addClass('success');
+                    const success = '#success' + id;
+                    const ele = document.querySelector(success)
+                    ele.innerHTML = 'Added to Cart';
+                    ele.classList.add('success')
 
                     setTimeout(() => {
-                        $(success).html('').removeClass('success')
+                        ele.innerHTML = '';
+                        ele.classList.remove('success')
                     }, 2000)
                 } else if (dataResult.statusCode == 201) {
                     alert("Error occured !");
@@ -25,8 +36,9 @@
                     window.alert('please login first');
                     window.open('login.php', '_self');
                 }
-            }
-        });
+            })
+            .catch(err => console.log(err))
+
     }
 </script>
 

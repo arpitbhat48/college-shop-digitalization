@@ -3,8 +3,8 @@ require("../db/db.php");
 session_start();
 
 if (isset($_SESSION['rollno'])) {
-
-	$id = $_POST['id'];
+	$data = json_decode(file_get_contents('php://input'), true);
+	$id = $data['id'];
 	$rno = $_SESSION['rollno'];
 
 	$check_inv = "SELECT stock FROM inventory WHERE item_id = $id";

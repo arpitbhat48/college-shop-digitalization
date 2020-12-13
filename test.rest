@@ -1,0 +1,6 @@
+POST http://localhost/college-shop-digitization/cart-functions/addToCart.php HTTP/1.1
+content-type: application/json
+
+{
+    "id": 4
+}
