@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../components/header/header.css">
     <?php
 
-    $pages = array("insert" => "insert.php", "edit" => "edit.php", "orders" => "orders.php");
+    $pages = array("insert" => "insert.php", "edit" => "edit.php", "user" => "forgotPassword.php", "orders" => "orders.php");
     if (isset($_SESSION['admin'])) {
         $pages['logout'] = "logout.php";
     } else {

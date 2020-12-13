@@ -21,7 +21,7 @@ require('./components/page-title/page-title.php')
 		</div>
 		<div class="pwd">
 			<label>Password
-				<a class="forgot" href="forgotPassword.php">Forgot Password</a>
+				<!-- <a class="forgot" href="forgotPassword.php">Forgot Password</a> -->
 				<input type="password" class="inputs" name="pwd" required>
 			</label>
 		</div>
@@ -33,8 +33,6 @@ require('./components/page-title/page-title.php')
 		</div>
 	</form>
 </div>
-<script src="./scripts/validate.js"></script>
-<script src="./scripts/login.js"></script>
 
 <?php
 require("./components/footer/footer.php");
@@ -42,7 +40,6 @@ require("db/db.php");
 
 if (isset($_POST['login'])) {
 
-	// 
 	$rno = mysqli_real_escape_string($con, $_POST['roll']);
 	$pwd = mysqli_real_escape_string($con, $_POST['pwd']);
 
