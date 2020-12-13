@@ -53,8 +53,9 @@ if (isset($_POST['confirm'])) {
 	$password = password_hash($pwd, PASSWORD_DEFAULT);
 	$sql = "UPDATE users SET password = '$password' 
 			WHERE user_rno = '$rno'";
+	$run = mysqli_query($con, $sql);
 
-	if (mysqli_query($con, $sql)) {
+	if (mysqli_num_rows($run) > 0) {
 		echo "<script>alert('Password changed');</script>";
 		echo "<script>window.open('edit.php','_self')</script>";
 	} else {
