@@ -17,15 +17,7 @@ if (!isset($_SESSION['admin'])) {
 <div class="container">
 	<?php
 		page_title("Proceed Orders");
-	?>
-    <div class="search-roll">
-        <form action="orders.php" method="POST"> 
-            <label>Roll No.
-                <input type="text" name="roll_no" placeholder="Enter Roll number">
-            </label> 
-            <button type="submit" name="search" class="order-roll-search-btn">Search </button>
-        <form>
-    </div>    
+	?>  
     <div>
         <form action='orders.php' method='POST'>
         <table class='order-table'>
@@ -41,91 +33,41 @@ if (!isset($_SESSION['admin'])) {
             </thead>
             <tbody>
         <?php
-            if(isset($_POST['search']) && isset($_POST['roll_no'])){
-                $roll_no = $_POST['roll_no'];
-                $search_query = "select * from orders where is_paid = 'false' and user_rno like '%$roll_no%'";
-                $search_result = mysqli_query($con, $search_query);
-                if(mysqli_num_rows($search_result) == 0){
-                    echo " No orders found";
-                }else{
-                    $order_query = "select * from orders where is_paid = 'false'";
-                    $result = mysqli_query($con, $order_query);
-
-                    while($row = mysqli_fetch_assoc($result)){
-                        $str = " ";
-                        $rno = $row['user_rno'];
-                        $order_id = $row['order_id'];
-                        $date_time = $row['date_time'];
-    
-                        $sum = 0;
-                        //fetch items of order_id $order_id 
-                        $fetch_items = "select * from order_items where order_id = $order_id";
-                        $items_result = mysqli_query($con, $fetch_items);
-    
-                        while($row2 = mysqli_fetch_assoc($items_result)){
-                            $item_id = $row2['item_id'];                    
-                            $str = $str.$item_id." , ";
-                            $price_query = "select * from inventory where item_id = $item_id";
-    
-                            $price_result = mysqli_query($con, $price_query);
-                            while($row2 = mysqli_fetch_assoc($price_result)){
-                                $price = $row2['cost'];
-                                $sum = $sum + $price;
-                            }
-                        }
-                        echo "
-                                <tr>
-                                    <td>$rno</td>
-                                    <td>$order_id</td>
-                                    <td>$str</td>
-                                    <td>$sum</td>
-                                    <td>$date_time</td>
-                                    <td><input type='checkbox' name='checkout[]' value='$order_id' /></td>
-                            </tr>
-                            ";
-                        
-                    }
-                }
-            }else{
-                $order_query = "select * from orders where is_paid = 'false'";
-                $result = mysqli_query($con, $order_query);
+            $order_query = "select * from orders where is_paid = 'false'";
+            $result = mysqli_query($con, $order_query);
                 
-                while($row = mysqli_fetch_assoc($result)){
-                    $str = " ";
-                    $rno = $row['user_rno'];
-                    $order_id = $row['order_id'];
-                    $date_time = $row['date_time'];
+            while($row = mysqli_fetch_assoc($result)){
+                $str = " ";
+                $rno = $row['user_rno'];
+                $order_id = $row['order_id'];
+                $date_time = $row['date_time'];
+                $sum = 0;
+                //fetch items of order_id $order_id 
+                $fetch_items = "select * from order_items where order_id = $order_id";
+                $items_result = mysqli_query($con, $fetch_items);
 
-                    $sum = 0;
-                    //fetch items of order_id $order_id 
-                    $fetch_items = "select * from order_items where order_id = $order_id";
-                    $items_result = mysqli_query($con, $fetch_items);
+                while($row2 = mysqli_fetch_assoc($items_result)){
+                    $item_id = $row2['item_id'];                    
+                    $str = $str.$item_id." , ";
+                    $price_query = "select * from inventory where item_id = $item_id";
 
-                    while($row2 = mysqli_fetch_assoc($items_result)){
-                        $item_id = $row2['item_id'];                    
-                        $str = $str.$item_id." , ";
-                        $price_query = "select * from inventory where item_id = $item_id";
-
-                        $price_result = mysqli_query($con, $price_query);
-                        while($row2 = mysqli_fetch_assoc($price_result)){
-                            $price = $row2['cost'];
-                            $sum = $sum + $price;
-                        }
+                    $price_result = mysqli_query($con, $price_query);
+                    while($row2 = mysqli_fetch_assoc($price_result)){
+                        $price = $row2['cost'];
+                        $sum = $sum + $price;
                     }
-                    echo "
-                            <tr>
-                                <td>$rno</td>
-                                <td>$order_id</td>
-                                <td>$str</td>
-                                <td>$sum</td>
-                                <td>$date_time</td>
-                                <td><input type='checkbox' name='checkout[]' value='$order_id' /></td>
-                        </tr>
-                        ";
                 }
+                echo "
+                       <tr>
+                            <td>$rno</td>
+                            <td>$order_id</td>
+                            <td>$str</td>
+                            <td>$sum</td>
+                            <td>$date_time</td>
+                            <td><input type='checkbox' name='checkout[]' value='$order_id' /></td>
+                        </tr>
+                   ";
             }
-
-            
         ?>
            </tbody>
         </table>
@@ -140,7 +82,6 @@ if (!isset($_SESSION['admin'])) {
     if(isset($_POST['checkout1'])){
         $checks = $_POST['checkout'];
         $true = "true";
-        // echo $checks;
         $sum = 0;
         foreach ($checks as $id){
             $order_ids = $order_ids.$id.", "; 
@@ -148,34 +89,22 @@ if (!isset($_SESSION['admin'])) {
             $find_items2 = "select * from order_items where order_id = $id";
             $items_result2 = mysqli_query($con, $find_items2);
             while($row2 = mysqli_fetch_assoc($items_result2)){
-                $item_id = $row2['item_id'];
-                $find_price = "select * from inventory where item_id = $item_id";
-                $price_result = mysqli_query($con, $find_price);
-                while($row1 = mysqli_fetch_assoc($price_result)){
-                    $item_name = $row1['item_name'];
-                    $price = $row1['cost'];
-                    $sum = $sum + $price;
-                }
-                $items = $items.$item_name.", ";
+                    $item_id = $row2['item_id'];
+                    $find_price = "select * from inventory where item_id = $item_id";
+                    $price_result = mysqli_query($con, $find_price);
+                    while($row1 = mysqli_fetch_assoc($price_result)){
+                        $item_name = $row1['item_name'];
+                        $price = $row1['cost'];
+                        $sum = $sum + $price;
+                    }
+                    $items = $items.$item_name.", ";
             }
-        
+            
             //update isPaid status to true
             $update_query = "UPDATE orders set is_paid = '$true' where order_id = $id"; 
             mysqli_query($con, $update_query);
-        }
-        echo "<div class='receipt'>
-                <h3>Order Receipt </h3>
-                <hr /> 
-                Order Id : $order_ids 
-                <br/>
-                <br/>
-                Items Bought : $items 
-                <br />
-                <br/>
-
-                Total Amount : ₹ <b>$sum</b> /. 
-                <br />
-            </div>";
-        // echo "<script>window.open('./orders.php','_self')</script>";
+    
+            }
+        echo "<script>window.open('./orders.php','_self')</script>";
     }
 ?>

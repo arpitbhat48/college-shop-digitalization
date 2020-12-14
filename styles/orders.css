@@ -16,6 +16,7 @@
 }
 
 .order-table{
+    margin-top: 2rem !important;
     border : 1px solid #ccc;
     border-spacing:0;
     width:70%;
