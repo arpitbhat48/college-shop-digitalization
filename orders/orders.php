@@ -40,7 +40,7 @@
                     mysqli_query($con, $update_inventory);
 
                 } else {
-                    echo "<script>alert('Error');</script>";
+                    echo "<script>alert('Out of stock');</script>";
                 }
             } else {
                 echo "<script>alert('Something went Wrong...');</script>";
