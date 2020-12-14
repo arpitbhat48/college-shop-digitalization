@@ -31,9 +31,9 @@ if (!isset($_SESSION['admin'])) {
 		</div>
 		
 		<div class="buttons">
-			<a href="login.php">
+			<!-- <a href="login.php">
 				<input class="btn" type="button" value="Login">
-			</a>
+			</a> -->
 			<input class="btn btn-inv" type="submit" name="confirm" value="Confirm">
 		</div>
 	</form>
