@@ -41,6 +41,8 @@
 
                 } else {
                     echo "<script>alert('Out of stock');</script>";
+                    echo "<script>window.open('../cart.php','_self')</script>";
+                    break;
                 }
             } else {
                 echo "<script>alert('Something went Wrong...');</script>";
