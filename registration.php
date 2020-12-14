@@ -9,7 +9,7 @@ require("./components/header/header.php");
 </div>
 
 <div class="centre">
-	<form action="" method="POST">
+	<form action="" method="POST" onsubmit="return validateForm()">
 		<div class="names">
 			<label>First Name
 				<input class="inputs" type="text" name="fname">
@@ -44,7 +44,7 @@ require("./components/header/header.php");
 			<a href="login.php">
 				<input type="button" class="btn" value="Login">
 			</a>
-			<input class="btn btn-inv" type="submit" name="register" onClick="validateForm()" value="Sign Up">
+			<input class="btn btn-inv" type="submit" name="register" value="Sign Up">
 		</div>
 
 	</form>
