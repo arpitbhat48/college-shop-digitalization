@@ -1,5 +1,5 @@
 <?php
-$PAGE = "login";
+$PAGE = "user";
 require('../components/header/admin_header.php');
 require('../components/page-title/admin_page_title.php');
 
